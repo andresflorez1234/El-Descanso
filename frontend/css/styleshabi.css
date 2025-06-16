@@ -1,0 +1,59 @@
+.navbar-nav {
+    padding-left: 150px; /* Aplica un relleno de 150 píxeles a la izquierda a los elementos de navegación de la barra. */
+}
+
+/* Estilos para el botón "Reservar" */
+.habitacion-card .btn-reservar {
+    background-color: #027332; /* Establece el color de fondo del botón "Reservar" a un tono de verde específico. */
+    color: white; /* Define el color del texto del botón "Reservar" en blanco. */
+    border: none; /* Elimina cualquier borde del botón. */
+    padding: 10px 25px; /* Aplica un relleno interno de 10 píxeles verticalmente y 25 píxeles horizontalmente al botón. */
+    border-radius: 5px; /* Redondea las esquinas del botón con un radio de 5 píxeles. */
+    font-size: 1rem; /* Define el tamaño de fuente del texto del botón a 1 rem. */
+    cursor: pointer; /* Cambia el cursor a un puntero cuando el usuario pasa el ratón sobre el botón. */
+    transition: background-color 0.3s ease; /* Aplica una transición suave de 0.3 segundos al cambio de color de fondo del botón. */
+    width: 100%; /* Permite que el botón ocupe el 100% del ancho disponible de su contenedor padre. */
+    max-width: 200px; /* Limita el ancho máximo del botón a 200 píxeles. */
+    margin: 0 auto; /* Centra el botón horizontalmente dentro de su contenedor. */
+} 
+
+/* Estilos al pasar el mouse sobre el botón "Reservar" */
+.habitacion-card .btn-reservar:hover {
+    background-color: #008f32; /* Cambia el color de fondo del botón a un tono de verde más oscuro cuando el ratón pasa por encima. */
+}
+
+@media (max-width: 991.98px) {
+    .habitacion-card h3 {
+        font-size: 1.6rem; /* Ajusta el tamaño de fuente de los encabezados h3 dentro de las tarjetas de habitación para pantallas con un ancho máximo de 991.98 píxeles. */
+    }
+    .habitacion-card p {
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente de los párrafos dentro de las tarjetas de habitación para pantallas con un ancho máximo de 991.98 píxeles. */
+    }
+    .habitacion-img {
+        height: 180px; /* Define la altura de las imágenes de las habitaciones en 180 píxeles para pantallas con un ancho máximo de 991.98 píxeles. */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .habitaciones {
+        padding: 40px 15px; /* Aumenta el relleno a 40 píxeles verticalmente y 15 píxeles horizontalmente para la sección de habitaciones en pantallas móviles. */
+    }
+    .habitaciones h2 {
+        font-size: 2rem; /* Establece el tamaño de fuente de los encabezados h2 en la sección de habitaciones a 2 rem para pantallas móviles. */
+    }
+    .habitacion-img {
+        height: 200px; /* Ajusta la altura de las imágenes de las habitaciones a 200 píxeles para pantallas móviles, permitiendo que sean más grandes. */
+    }
+    .habitacion-card {
+        padding: 15px; /* Define un relleno interno de 15 píxeles para las tarjetas de habitación en pantallas móviles. */
+    }
+    .habitacion-card h3 {
+        font-size: 1.5rem; /* Ajusta el tamaño de fuente de los encabezados h3 dentro de las tarjetas de habitación a 1.5 rem para pantallas móviles. */
+    }
+}
+
+@media (max-width: 575.98px) {
+    .habitacion-card {
+        margin-bottom: 20px; /* Añade un margen inferior de 20 píxeles a las tarjetas de habitación cuando se muestran en columnas individuales en pantallas muy pequeñas. */
+    }
+}
