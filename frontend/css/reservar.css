@@ -1,0 +1,104 @@
+.container.py-5 {
+    position: relative; /* Posiciona el elemento de forma relativa al flujo normal del documento. */
+    z-index: 5; /* Asegura que el elemento se superponga sobre otros elementos con un z-index menor, como una imagen de fondo. */
+    background-color: #e8e9e9; /* Establece el color de fondo del contenedor, lo cual es crucial para evitar la transparencia. */
+    padding: 2rem; /* Aplica un relleno interno de 2 rem en todos los lados del contenedor. */
+    border-radius: 0.5rem; /* Redondea las esquinas del contenedor con un radio de 0.5 rem. */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Aplica una sombra al contenedor, mejorando su profundidad visual. */
+    max-width: 900px; /* Limita el ancho máximo del contenedor a 900 píxeles. Este valor puede ser ajustado para controlar el ancho. */
+    width: 100%; /* Permite que el contenedor ocupe el 100% del ancho disponible de su padre, hasta el max-width. */
+    margin-left: auto; /* Centra el contenedor horizontalmente al aplicar un margen izquierdo automático. */
+    margin-right: auto; /* Centra el contenedor horizontalmente al aplicar un margen derecho automático. */
+    margin-top: 30px; /* Aplica un margen superior de 30 píxeles al contenedor. */
+}
+
+.navbar-nav {
+    padding-right: 140px; /* Aplica un relleno de 140 píxeles al lado derecho de los elementos de navegación de la barra. */
+}
+
+.card-custom {
+    border: 1px solid #bdbdbd; /* Establece un borde de 1 píxel sólido con un color gris claro para la tarjeta personalizada. */
+    background-color: #ebebeb; /* Define el color de fondo de la tarjeta personalizada. */
+    border-radius: 0.5rem; /* Redondea las esquinas de la tarjeta con un radio de 0.5 rem. */
+    padding: 1rem; /* Aplica un relleno interno de 1 rem en todos los lados de la tarjeta. */
+    height: 100%; /* Establece la altura de la tarjeta al 100% de su contenedor padre. */
+    display: flex; /* Habilita el modelo de caja flexible para organizar el contenido de la tarjeta. */
+    flex-direction: column; /* Organiza los elementos flexibles de la tarjeta en una columna. */
+    justify-content: center; /* Centra el contenido de la tarjeta verticalmente dentro del contenedor flexible. */
+}
+
+.counter-box {
+    background-color: rgb(224, 234, 237); /* Establece el color de fondo de la caja del contador. */
+    border: 1px solid #ced4da; /* Define un borde de 1 píxel sólido con un color gris para la caja del contador. */
+    border-radius: 0.375rem; /* Redondea las esquinas de la caja del contador. */
+    padding: 4px 8px; /* Aplica un relleno de 4 píxeles verticalmente y 8 píxeles horizontalmente a la caja del contador. */
+    display: flex; /* Habilita el modelo de caja flexible para el contenido de la caja del contador. */
+    align-items: center; /* Centra los elementos flexibles de la caja del contador verticalmente. */
+    gap: 5px; /* Establece un espacio de 5 píxeles entre los elementos flexibles de la caja del contador. */
+}
+
+.text-danger {
+    margin-right: 16px; /* Aplica un margen de 16 píxeles al lado derecho del texto con la clase 'text-danger'. */
+}
+
+.icon-label {
+    position: relative; /* Posiciona el elemento de forma relativa al flujo normal del documento. */
+    top: -5px; /* Desplaza el elemento 5 píxeles hacia arriba desde su posición normal. */
+    font-weight: bold; /* Establece la fuente del texto en negrita. */
+    display: flex; /* Habilita el modelo de caja flexible para el icono y la etiqueta. */
+    align-items: center; /* Centra el icono y la etiqueta verticalmente. */
+    gap: 5px; /* Establece un espacio de 5 píxeles entre el icono y la etiqueta. */
+}
+
+.icon-labell {
+    position: relative; /* Posiciona el elemento de forma relativa al flujo normal del documento. */
+    top: -19px; /* Desplaza el elemento 19 píxeles hacia arriba desde su posición normal. */
+    font-weight: bold; /* Establece la fuente del texto en negrita. */
+    display: flex; /* Habilita el modelo de caja flexible para el icono y la etiqueta. */
+    align-items: center; /* Centra el icono y la etiqueta verticalmente. */
+    gap: 5px; /* Establece un espacio de 5 píxeles entre el icono y la etiqueta. */
+}
+
+.form-control {
+    background-color: rgb(224, 234, 237); /* Define el color de fondo para los controles de formulario. */
+}
+
+.btn-search {
+    background-color: #027332; /* Establece el color de fondo del botón de búsqueda a un tono de verde. */
+    color: white; /* Define el color del texto del botón de búsqueda en blanco. */
+}
+
+.btn-search:hover {
+    background-color: #027332; /* Mantiene el mismo color de fondo al pasar el ratón por el botón de búsqueda. */
+}
+
+.btn-add-room {
+    color: #027332; /* Establece el color del texto del botón "añadir habitación" a un tono de verde. */
+    font-weight: bold; /* Aplica negrita al texto del botón. */
+    cursor: pointer; /* Cambia el cursor a un puntero al pasar el ratón sobre el botón. */
+}
+
+.counter {
+    display: flex; /* Habilita el modelo de caja flexible para los elementos del contador. */
+    align-items: center; /* Centra los elementos del contador verticalmente. */
+    gap: 5px; /* Establece un espacio de 5 píxeles entre los elementos del contador. */
+}
+
+.counter span {
+    min-width: 20px; /* Establece un ancho mínimo de 20 píxeles para los elementos span dentro del contador. */
+    text-align: center; /* Centra el texto dentro de los elementos span. */
+}
+
+.room-row {
+    border-top: 1px solid #c8c8c8; /* Aplica un borde superior de 1 píxel sólido con un color gris claro a la fila de la habitación. */
+    padding-top: 1rem; /* Aplica un relleno de 1 rem en la parte superior de la fila de la habitación. */
+    margin-top: 1rem; /* Aplica un margen de 1 rem en la parte superior de la fila de la habitación. */
+}
+
+footer {
+    background-color: #027332; /* Establece el color de fondo del pie de página a un tono de verde. */
+    color: white; /* Define el color del texto del pie de página en blanco. */
+    padding: 20px; /* Aplica un relleno de 20 píxeles en todos los lados del pie de página. */
+    font-family: sans-serif; /* Establece la familia de fuente del pie de página a una fuente sans-serif genérica. */
+    margin-top: 30px; /* Aplica un margen superior de 30 píxeles al pie de página. */
+}
