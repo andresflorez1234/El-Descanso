@@ -1,5 +1,5 @@
 .navbar-nav {
-    padding-left: 150px; /* Aplica un relleno de 150 píxeles a la izquierda a los elementos de navegación de la barra. */
+    padding-right: 140px; /* Aplica un relleno de 150 píxeles a la izquierda a los elementos de navegación de la barra. */
 }
 
 /* Estilos para el botón "Reservar" */
@@ -15,6 +15,7 @@
     width: 100%; /* Permite que el botón ocupe el 100% del ancho disponible de su contenedor padre. */
     max-width: 200px; /* Limita el ancho máximo del botón a 200 píxeles. */
     margin: 0 auto; /* Centra el botón horizontalmente dentro de su contenedor. */
+    text-decoration: none;
 } 
 
 /* Estilos al pasar el mouse sobre el botón "Reservar" */
