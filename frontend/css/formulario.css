@@ -1,469 +1,422 @@
+/* FORMULARIO.CSS */
+
+/* --- AJUSTES PARA LA SECCIÓN "RESUMEN DE LA RESERVA" (LA CAJA VERDE) --- */
+.comprobante-reserva {
+    display: none;
+    background-color: #fff;
+    border: 2px solid #027332;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.comprobante-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.comprobante-logo {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.comprobante-header h2 {
+    color: #027332;
+    margin-bottom: 5px;
+}
+
+.comprobante-sub {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.comprobante-body {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.comprobante-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ccc;
+    padding: 6px 0;
+}
+
+.comprobante-total {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.comprobante-footer {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.resumen-box {
+    /* Mantén estas propiedades, son la base flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #027332;
+    color: white;
+    padding: 20px 30px;
+    margin-bottom: 25px;
+}
+
+#peticion-area {
+    min-height: 200px; /* Ajusta el número a tu gusto */
+}
+
+.resumen-box>.col-md-4 {
+    /* Selecciona el col-md-4 que es hijo directo de .resumen-box */
+    flex-shrink: 0;
+    /* Fuerza a que no se encoja, incluso si Bootstrap lo intenta */
+    max-width: 30%;
+    /* Fuerza el ancho máximo */
+    text-align: right;
+    /* ¡Fuerza la alineación a la derecha! */
+}
+
+/* Asegura que la columna de la izquierda ocupe su espacio */
+.resumen-box>.col-md-8 {
+    /* Selecciona el col-md-8 que es hijo directo de .resumen-box */
+    flex-grow: 1;
+    /* Fuerza a que crezca */
+    max-width: 70%;
+    /* Fuerza el ancho máximo */
+}
+
+/* --- ESTILOS ORIGINALES (MANTENIDOS) --- */
 .barra-progreso {
-    background-color: #e7e7e7; /* Establece el color de fondo para la barra de progreso. */
-    padding-top: 10px; /* Reduce el relleno superior de la barra de progreso. */
-    padding-bottom: 10px; /* Reduce el relleno inferior de la barra de progreso. */
-    padding-left: 20px; /* Mantiene el relleno izquierdo de la barra de progreso. */
-    padding-right: 20px; /* Mantiene el relleno derecho de la barra de progreso. */
-    max-width: 1345px; /* Limita el ancho máximo de la barra de progreso. */
-    width: 100%; /* Asegura que la barra de progreso ocupe todo el ancho disponible hasta su `max-width`. */
-    margin: auto; /* Centra la barra de progreso horizontalmente. */
+    background-color: #e7e7e7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1345px;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar-nav {
+    padding-right: 125px;
 }
 
 .stepper {
-    display: flex; /* Habilita el modelo de caja flexible para el stepper. */
-    justify-content: space-around; /* Distribuye el espacio uniformemente alrededor de los elementos del stepper. */
-    align-items: center; /* Centra los elementos del stepper verticalmente. */
-    width: 90%; /* Define el ancho del stepper al 90% de su contenedor padre. */
-    margin: 40px auto; /* Centra el stepper horizontalmente y le aplica un margen superior e inferior. */
-    position: relative; /* Posiciona el stepper de forma relativa al flujo normal del documento. */
-    background-color: transparent; /* Hace que el fondo del stepper sea transparente. */
-    padding: 0; /* Elimina cualquier relleno del stepper. */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 40px auto;
+    position: relative;
+    background-color: transparent;
+    padding: 0;
 }
 
 .step {
-    display: flex; /* Habilita el modelo de caja flexible para cada paso individual del stepper. */
-    align-items: center; /* Centra los elementos dentro de cada paso verticalmente. */
-    background-color: #fcfcfc; /* Establece el color de fondo para cada paso. */
-    border-radius: 50px; /* Redondea completamente las esquinas de cada paso, creando una forma de píldora. */
-    padding: 8px 18px; /* Aplica un relleno interno de 8 píxeles verticalmente y 18 píxeles horizontalmente. */
-    font-size: 14px; /* Define el tamaño de fuente para el texto de cada paso. */
-    color: #333; /* Establece el color del texto de cada paso. */
-    white-space: nowrap; /* Evita que el texto de cada paso se envuelva en varias líneas. */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Aplica una sombra sutil a cada paso. */
-    position: relative; /* Posiciona el paso de forma relativa. */
-    z-index: 2; /* Asegura que el paso esté por encima de otros elementos, como la línea del stepper. */
+    display: flex;
+    align-items: center;
+    background-color: #fcfcfc;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .step .circle {
-    display: flex; /* Habilita el modelo de caja flexible para el círculo dentro de cada paso. */
-    justify-content: center; /* Centra el contenido (generalmente un icono) del círculo horizontalmente. */
-    align-items: center; /* Centra el contenido del círculo verticalmente. */
-    width: 24px; /* Define el ancho del círculo. */
-    height: 24px; /* Define la altura del círculo. */
-    margin-right: 8px; /* Aplica un margen a la derecha del círculo para separarlo del texto. */
-    border-radius: 50%; /* Hace que el elemento sea un círculo perfecto. */
-    background-color: #027332; /* Establece el color de fondo del círculo a un tono de verde. */
-    flex-shrink: 0; /* Evita que el círculo se encoja cuando el espacio es limitado. */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: #027332;
+    flex-shrink: 0;
 }
 
 .step i {
-    color: #fff; /* Establece el color del icono dentro del círculo en blanco. */
-    font-size: 1.1em; /* Ajusta el tamaño de fuente del icono en relación con el tamaño de fuente del elemento padre. */
-    margin-right: 0; /* Elimina cualquier margen derecho por defecto del icono. */
+    color: #fff;
+    font-size: 1.1em;
+    margin-right: 0;
 }
 
 .step.completed .circle {
-    background-color: #027332; /* Mantiene el color de fondo del círculo verde para pasos completados. */
+    background-color: #027332;
 }
 
 .step.completed i {
-    color: #fff; /* Mantiene el color del icono blanco para pasos completados. */
+    color: #fff;
 }
 
 .step.active-look .circle {
-    background-color: #027332; /* Mantiene el color de fondo del círculo verde para el paso con la apariencia activa. */
+    background-color: #027332;
 }
 
 .step.active-look i {
-    color: #fff; /* Mantiene el color del icono blanco para el paso con la apariencia activa. */
+    color: #fff;
 }
 
 .stepper .line {
-    flex-grow: 1; /* Permite que la línea crezca para ocupar el espacio disponible entre los pasos. */
-    height: 4px; /* Define la altura de la línea. */
-    background-color: #027332; /* Establece el color de fondo de la línea a un tono de verde. */
-    position: relative; /* Posiciona la línea de forma relativa. */
-    z-index: 1; /* Asegura que la línea esté por debajo de los pasos con un `z-index` mayor. */
-    margin: 0 -10px; /* Aplica un margen horizontal negativo para que la línea se superponga ligeramente con los pasos. */
+    flex-grow: 1;
+    height: 4px;
+    background-color: #027332;
+    position: relative;
+    z-index: 1;
+    margin: 0 -10px;
 }
 
 .stepper .line.completed {
-    background-color: #027332; /* Mantiene el color de fondo de la línea verde para los segmentos completados. */
-}
-
-/* Estilos de la caja de resumen (encabezado verde) */
-.resumen-box {
-    background-color: #027332; /* Define el color de fondo de la caja de resumen a un verde fuerte. */
-    color: white; /* Establece el color del texto dentro de la caja de resumen en blanco. */
-    padding: 20px 30px; /* Ajusta el relleno interno de la caja de resumen. */
-    display: flex; /* Habilita el modelo de caja flexible para alinear el título y el resumen de precios. */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos del flexbox. */
-    align-items: center; /* Centra los elementos verticalmente. */
-    margin-bottom: 25px; /* Aplica un margen debajo de la caja de resumen. */
-    flex-wrap: wrap; /* Permite que los elementos dentro de la caja de resumen se envuelvan en pantallas pequeñas. */
-}
-
-.resumen-box .col-md-8 { /* Estilos para la columna del título dentro de la caja de resumen. */
-    flex-grow: 1; /* Permite que la columna del título crezca para ocupar el espacio disponible. */
-    max-width: 70%; /* Limita el ancho máximo de la columna del título. */
-}
-
-.resumen-box .col-md-4 { /* Estilos para la columna del resumen de precios dentro de la caja de resumen. */
-    flex-shrink: 0; /* Evita que la columna del resumen de precios se encoja. */
-    max-width: 30%; /* Limita el ancho máximo de la columna del resumen de precios. */
-    text-align: right; /* Alinea el texto a la derecha dentro de la columna del resumen de precios. */
+    background-color: #027332;
 }
 
 .resumen-titulo {
-    color: white; /* Establece el color del título de resumen en blanco. */
-    margin-bottom: 5px; /* Aplica un margen inferior al título de resumen. */
-    font-size: 1.5rem; /* Ajusta el tamaño de fuente del título de resumen. */
-    font-weight: bold; /* Pone el texto del título de resumen en negrita. */
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .resumen-texto {
-    margin: 0; /* Elimina cualquier margen por defecto del texto de resumen. */
-    font-size: 0.9rem; /* Ajusta el tamaño de fuente del texto de resumen. */
-    opacity: 0.9; /* Aplica una ligera transparencia al texto de resumen. */
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
 }
 
 .resumen-total {
-    font-size: 0.8em; /* Ajusta el tamaño de fuente del total del resumen. */
-    line-height: 1.2; /* Define la altura de línea para el total del resumen. */
-    margin-bottom: 5px; /* Aplica un margen inferior al total del resumen. */
+    font-size: 0.8em;
+    line-height: 1.2;
+    margin-bottom: 5px;
 }
 
 .resumen-sub {
-    font-size: 0.7em; /* Ajusta el tamaño de fuente del subtotal del resumen. */
-    display: block; /* Hace que el subtotal del resumen ocupe su propia línea. */
+    font-size: 0.7em;
+    display: block;
 }
 
 .resumen-precio {
-    font-size: 2.2rem; /* Ajusta el tamaño de fuente del precio del resumen. */
-    font-weight: bold; /* Pone el texto del precio del resumen en negrita. */
-    line-height: 1.2; /* Define la altura de línea para el precio del resumen. */
-    margin-bottom: 5px; /* Aplica un margen inferior al precio del resumen. */
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 5px;
 }
 
-.resumen-pago {
-    font-size: 0.75em; /* Ajusta el tamaño de fuente del texto de pago del resumen. */
-    opacity: 0.9; /* Aplica una ligera transparencia al texto de pago del resumen. */
-}
-
-/* Estilos de la nota importante */
 .nota {
-    background-color: #fefce8; /* Establece el color de fondo de la nota importante a un amarillo claro. */
-    border-left: 5px solid #fbd38d; /* Aplica un borde izquierdo de 5 píxeles sólido de color naranja suave. */
-    padding: 15px 20px; /* Aplica un relleno interno a la nota. */
-    color: #6b460c; /* Define el color del texto de la nota para un buen contraste. */
-    font-size: 0.95rem; /* Establece el tamaño de fuente de la nota. */
-    line-height: 1.5; /* Define la altura de línea de la nota. */
-    max-width: 100%; /* Asegura que la nota no se desborde horizontalmente. */
+    background-color: #fefce8;
+    border-left: 5px solid #fbd38d;
+    padding: 15px 20px;
+    color: #6b460c;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 100%;
 }
 
 .subir-nota {
-    position: relative; /* Posiciona la nota de forma relativa. */
-    top: -25px; /* Mueve la nota 25 píxeles hacia arriba desde su posición original. */
-    height: 120px; /* Define una altura fija para la nota. */
+    position: relative;
+    top: -25px;
+    height: 120px;
 }
 
 .nota strong {
-    color: #4a320c; /* Establece un color un poco más oscuro para el texto en negrita dentro de la nota. */
+    color: #4a320c;
 }
 
-/* Estilos para las secciones del formulario */
 .form-section {
-    background-color: #f3f2f2; /* Define el color de fondo de las secciones del formulario. */
-    padding: 20px; /* Aplica un relleno interno a las secciones del formulario. */
-    border-radius: 10px; /* Redondea las esquinas de las secciones del formulario. */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05); /* Aplica una sombra sutil a las secciones del formulario. */
-    margin-bottom: 20px; /* Añade espacio debajo de cada sección del formulario. */
-    border: 1px solid #e0e0e0; /* Aplica un borde sutil a las secciones del formulario. */
-    height: auto; /* Permite que la altura de la sección del formulario se ajuste automáticamente. */
+    background-color: #f3f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    height: auto;
 }
 
-/* Estilos de los encabezados de sección dentro del formulario */
-.form-section h2 {
-    font-size: 24px; /* Establece el tamaño de fuente para los encabezados h2 dentro de las secciones del formulario. */
-    margin-bottom: 20px; /* Aplica un margen debajo de los encabezados h2. */
-    color: #333; /* Define un color oscuro para los encabezados. */
-    font-weight: bold; /* Pone el texto de los encabezados en negrita. */
-}
-
-/* Ajustes para el grid interno en los formularios */
-.form-section .row.g-2 {
-    --bs-gutter-x: 1rem; /* Define el espaciado horizontal entre columnas para el grid de Bootstrap. */
-    --bs-gutter-y: 1.5rem; /* Define un mayor espaciado vertical entre filas para el grid de Bootstrap. */
-}
-
-/* Estilos para las etiquetas (labels) */
-label {
-    font-weight: normal; /* Normaliza el peso de la fuente de las etiquetas. */
-    color: #333; /* Define el color del texto de las etiquetas. */
-    margin-bottom: 5px; /* Aplica un margen inferior a las etiquetas. */
-    display: block; /* Hace que las etiquetas se muestren como bloques. */
-    font-size: 0.9rem; /* Ajusta el tamaño de fuente de las etiquetas. */
-}
-
-/* Estilos para los campos de entrada de texto */
 .form-control {
-    border: 1px solid #ccc; /* Aplica un borde definido a los campos de control de formulario. */
-    border-radius: 5px; /* Redondea los bordes de los campos de control de formulario. */
-    padding: 8px 12px; /* Ajusta el relleno interno de los campos de control de formulario. */
-    font-size: 0.95rem; /* Ajusta el tamaño de fuente de los campos de control de formulario. */
-    height: 38px; /* Establece una altura fija para todos los campos de entrada. */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    height: 38px;
 }
 
-textarea.form-control {
-    resize: none; /* Deshabilita el redimensionamiento manual del textarea. */
-    min-height: 100px; /* Define una altura mínima para el textarea de peticiones. */
-}
-
-/* Estilos de la caja de bancos */
-.banco-box {
-    border: 1px solid #e0e0e0; /* Aplica un borde sutil a la caja de bancos. */
-    border-radius: 10px; /* Redondea las esquinas de la caja de bancos. */
-    padding: 15px 20px; /* Aplica un relleno interno a la caja de bancos. */
-    background-color: #f8f8f8; /* Establece el color de fondo de la caja de bancos. */
-    overflow: hidden; /* Asegura que el contenido que se desborde esté oculto. */
-}
-
-/* Contenedor para el grupo de radio buttons y el encabezado de las columnas */
-.radio-header-grid {
-    display: grid; /* Habilita el modelo de cuadrícula para el encabezado de radio buttons. */
-    grid-template-columns: 1fr 1fr; /* Define dos columnas de igual ancho para la cuadrícula. */
-    gap: 10px; /* Establece el espacio entre las columnas de la cuadrícula. */
-    margin-bottom: 15px; /* Añade espacio debajo de los radio buttons. */
-    align-items: center; /* Centra los elementos de la cuadrícula verticalmente. */
-}
-
-.radio-header-grid .radio-label-left,
-.radio-header-grid .radio-label-right {
-    display: flex; /* Habilita el modelo de caja flexible para las etiquetas de radio. */
-    align-items: center; /* Alinea el texto verticalmente en el centro. */
-    justify-content: center; /* Centra ambos títulos horizontalmente. */
-    width: 100%; /* Asegura que el elemento flexible ocupe todo el ancho disponible en su celda de la cuadrícula. */
-}
-
-.radio-header-grid .radio-label-left {
-    justify-content: flex-start; /* Alinea el contenido de la etiqueta de radio izquierda al inicio. */
-}
-
-/* Contenedor para la lista de bancos y los campos de entrada, incluyendo la línea vertical */
-.bank-list-container {
-    display: flex; /* Habilita el modelo de caja flexible para las columnas principales. */
-    align-items: stretch; /* Asegura que las columnas se estiren para tener la misma altura. */
-    width: 100%; /* Permite que el contenedor ocupe todo el ancho. */
-}
-
-.bank-names-column {
-    flex: 1; /* Permite que la columna de nombres de bancos ocupe espacio flexible. */
-    display: flex; /* Habilita el modelo de caja flexible para los nombres de bancos. */
-    flex-direction: column; /* Apila los elementos de la lista verticalmente. */
-    justify-content: space-between; /* Distribuye el espacio entre los elementos de la lista. */
-    padding-right: 10px; /* Aplica un relleno a la derecha de la columna antes de la línea divisoria. */
-}
-
-.bank-names-list {
-    list-style: disc; /* Establece un estilo de lista con puntos. */
-    margin: 0; /* Elimina cualquier margen por defecto de la lista de bancos. */
-    padding-left: 20px; /* Aplica un relleno a la izquierda para los puntos de la lista. */
-}
-
-.bank-names-list li {
-    font-size: 14px; /* Establece el tamaño de fuente para cada elemento de la lista de bancos. */
-    color: #333; /* Define el color del texto de cada elemento de la lista. */
-    padding: 0; /* Elimina cualquier relleno por defecto de los elementos de la lista. */
-    height: 38px; /* Establece una altura para cada elemento de la lista para alinearlo con los campos de entrada. */
-    display: flex; /* Habilita el modelo de caja flexible para cada elemento de la lista. */
-    align-items: center; /* Centra el texto verticalmente dentro de cada elemento de la lista. */
-    margin-bottom: 20px; /* Aumenta el espacio entre elementos de la lista para una mayor separación vertical. */
-}
-
-.bank-names-list li:last-child {
-    margin-bottom: 0; /* Elimina el margen inferior del último elemento de la lista. */
-}
-
-.vertical-divider {
-    width: 1px; /* Define el ancho de la línea divisoria vertical. */
-    background-color: #e0e0e0; /* Establece el color de fondo de la línea divisoria. */
-    flex-shrink: 0; /* Evita que la línea divisoria se encoja. */
-    margin: 0 20px; /* Aumenta el espacio horizontal a cada lado de la línea divisoria. */
-}
-
-.account-inputs-column {
-    flex: 1; /* Permite que la columna de campos de entrada de cuenta ocupe espacio flexible. */
-    display: flex; /* Habilita el modelo de caja flexible para los campos de entrada de cuenta. */
-    flex-direction: column; /* Apila los campos de entrada verticalmente. */
-    justify-content: space-between; /* Distribuye el espacio entre los campos de entrada. */
-    padding-left: 10px; /* Aplica un relleno a la izquierda de la columna después de la línea divisoria. */
-    align-items: flex-end; /* Alinea los campos de entrada a la derecha. */
-}
-
-.account-inputs-column .form-control {
-    height: 38px; /* Establece una altura fija para los campos de entrada de cuenta. */
-    font-size: 14px; /* Define el tamaño de fuente para los campos de entrada de cuenta. */
-    width: 100%; /* Permite que los campos de entrada ocupen todo el ancho disponible en la columna. */
-    max-width: 180px; /* Limita el ancho del campo de entrada para que coincida con el diseño de la imagen. */
-    padding: 8px 12px; /* Aplica un relleno interno a los campos de entrada. */
-    border: 1px solid #ccc; /* Aplica un borde a los campos de entrada. */
-    border-radius: 5px; /* Redondea los bordes de los campos de entrada. */
-    background-color: #fff; /* Asegura que el fondo de los campos de entrada sea blanco. */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Aplica una sombra ligera a los campos de entrada. */
-    margin-bottom: 20px; /* Aumenta el espacio entre los campos de entrada. */
-}
-
-.account-inputs-column .form-control:last-child {
-    margin-bottom: 0; /* Elimina el margen inferior del último campo de entrada. */
-}
-
-/* Estilos para casillas de verificación/botones de radio */
-/* NOTA: Estos estilos se mantienen ya que aún se usan para los checkboxes de "condiciones" y "ofertas" */
 .form-check-label {
-    font-weight: normal; /* Normaliza el peso de la fuente de las etiquetas de los checkboxes/radio buttons. */
-    font-size: 11px; /* Ajusta el tamaño de fuente para hacer la letra más pequeña. */
+    font-weight: normal;
+    font-size: 11px;
     margin-right: 50px;
 }
 
 .form-check-input {
-    transform: scale(1.1); /* Agranda ligeramente las casillas de verificación/radio buttons. */
-    margin-right: 0.5rem; /* Aplica un margen a la derecha para espaciar la etiqueta. */
+    transform: scale(1.1);
+    margin-right: 0.5rem;
 }
 
-/* Estilos para el aviso de petición */
-.peticion-aviso { /* Esta clase es el nombre sugerido para el texto de aviso de petición. */
-    font-size: 12px; /* Establece el tamaño de fuente para el texto de aviso. */
-    color: #555; /* Define el color del texto de aviso. */
-    margin-top: 13px; /* Aplica un margen superior al texto de aviso. */
-}
-
-/* Estilos para enlaces legales */
 .link-legal {
-    color: #027332; /* Establece el color del enlace legal. */
-    text-decoration: underline; /* Aplica un subrayado al enlace legal. */
+    color: #027332;
+    text-decoration: underline;
 }
 
 .link-legal:hover {
-    color: #027332; /* Mantiene el color del enlace al pasar el ratón. */
-    text-decoration: none; /* Elimina el subrayado al pasar el ratón por el enlace legal. */
+    color: #027332;
+    text-decoration: none;
 }
 
-/* Estilos del botón de confirmar */
-.btn-confirmar {
-    background-color: #027332; /* Define el color de fondo del botón de confirmar a un verde fuerte. */
-    color: white; /* Establece el color del texto del botón de confirmar en blanco. */
-    padding: 12px 30px; /* Aplica un mayor relleno para un botón más grande. */
-    border-radius: 8px; /* Redondea los bordes del botón. */
-    font-size: 1.1rem; /* Establece el tamaño de fuente del botón. */
-    border: none; /* Elimina cualquier borde del botón. */
-    cursor: pointer; /* Cambia el cursor a un puntero al pasar el ratón por el botón. */
-    transition: background-color 0.3s ease; /* Aplica una transición suave al color de fondo. */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Aplica una sombra al botón. */
-    min-width: 180px; /* Define un ancho mínimo para el botón. */
-}
-
-.btn-confirmar:hover {
-    background-color: #027332; /* Cambia el color de fondo del botón a un verde ligeramente más oscuro al pasar el ratón. */
-}
-
-/* Clases de utilidad para centrar el contenedor principal */
 .container.main-center {
-    max-width: 960px; /* Limita el ancho máximo del contenedor principal. */
-    margin-left: auto; /* Centra el contenedor principal horizontalmente. */
-    margin-right: auto; /* Centra el contenedor principal horizontalmente. */
-    padding: 0 15px; /* Aplica un relleno interno para evitar que el contenido toque los bordes. */
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
 }
 
 .fondo-div {
-    background-color: #f0f0f0; /* Establece el color de fondo para el div de fondo. */
-    padding: 15px 40px; /* Aplica un relleno al div de fondo. */
-    border-radius: 8px; /* Redondea los bordes del div de fondo. */
+    background-color: #f0f0f0;
+    padding: 15px 40px;
+    border-radius: 8px;
 }
 
 .contenedor_dos {
-    max-width: 950px; /* Limita el ancho máximo del segundo contenedor. */
-    margin-left: auto; /* Centra el segundo contenedor horizontalmente. */
-    margin-right: auto; /* Centra el segundo contenedor horizontalmente. */
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.special-request-box {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.special-request-text {
+    color: #6c757d;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.terms-section {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+.terms-text {
+    margin-bottom: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+.checkbox-item label {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.btn-confirm {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    padding: 10px 25px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.btn-confirm:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+@media (min-width: 768px) {
+    .row.mt-4 {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .row.mt-4>.col-md-6 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row.mt-4>.col-md-6 .form-section {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
 
+/* --- MEDIA QUERIES (AJUSTES PARA MÓVILES/TABLETS) --- */
+
 @media (max-width: 992px) {
-    /* Ajustes para tabletas y pantallas más pequeñas */
+
     .resumen-box {
-        flex-direction: column; /* Apila los elementos de la caja de resumen en una columna. */
-        text-align: center; /* Centra el texto dentro de la caja de resumen. */
-        padding: 20px; /* Ajusta el relleno de la caja de resumen. */
+        flex-direction: column !important;
+        /* Fuerza el apilamiento */
+        text-align: center !important;
+        /* Fuerza el centrado general */
+        padding: 10px 20px;
     }
 
-    .resumen-box .col-md-8,
-    .resumen-box .col-md-4 {
-        max-width: 100%; /* Permite que las columnas ocupen todo el ancho disponible. */
-        text-align: center; /* Centra el texto dentro de las columnas. */
+    .resumen-box>.col-md-4 {
+        /* Selector más específico */
+        margin-top: 15px !important;
+        max-width: 100% !important;
+        /* Fuerza el ancho completo */
+        text-align: center !important;
+        /* Fuerza el centrado individual */
     }
 
-    .resumen-box .col-md-4 {
-        margin-top: 15px; /* Añade espacio entre el título y el resumen de precios. */
+    .resumen-box>.col-md-8 {
+        /* Selector más específico */
+        max-width: 100% !important;
+        /* Fuerza el ancho completo */
+        text-align: center !important;
+        /* Fuerza el centrado individual */
     }
 
     .form-section {
-        padding: 15px; /* Reduce el relleno de las secciones del formulario en dispositivos móviles. */
+        padding: 15px;
     }
 
-    .bank-list-container {
-        flex-direction: column; /* Apila los elementos en una sola columna en dispositivos móviles. */
-    }
-    .bank-list-container::before, .vertical-divider {
-        display: none; /* Oculta la línea vertical en dispositivos móviles. */
-    }
-
-    .bank-names-column, .account-inputs-column {
-        width: 100%; /* Permite que las columnas de nombres de bancos y campos de entrada de cuenta ocupen todo el ancho en dispositivos móviles. */
-        padding-left: 20px; /* Mantiene el relleno para las viñetas/inputs. */
-        padding-right: 20px; /* Mantiene el relleno para las viñetas/inputs. */
-        align-items: stretch; /* Estira los campos de entrada al 100% del ancho de la columna. */
-    }
-
-    .bank-names-list {
-        margin-bottom: 10px; /* Añade espacio entre la lista de bancos y los campos de entrada apilados. */
-    }
-
-    .bank-names-list li {
-        margin-bottom: 8px; /* Reduce el espacio entre los elementos de la lista de bancos. */
-    }
-
-    .account-inputs-column .form-control {
-        width: 100%; /* Permite que los campos de entrada ocupen todo el ancho en dispositivos móviles. */
-        max-width: none; /* Elimina el límite de ancho para los campos de entrada. */
-        margin-bottom: 8px; /* Reduce el espacio entre los campos de entrada. */
-    }
-
-    .btn-confirmar {
-        width: 100%; /* Hace que el botón de confirmar ocupe todo el ancho en dispositivos móviles. */
-        padding: 10px 20px; /* Ajusta el relleno del botón de confirmar. */
-    }
-}
-
-@media (max-width: 767px) {
-    /* Ajustes específicos para móviles */
-    body {
-        padding: 10px; /* Reduce el relleno del cuerpo del documento. */
-    }
-
-    .barra-progreso-container {
-        flex-direction: column; /* Apila los elementos del contenedor de la barra de progreso. */
-        align-items: flex-start; /* Alinea los elementos al inicio. */
-    }
-
-    .barra-paso {
-        margin-bottom: 10px; /* Añade un margen inferior a los pasos de la barra. */
-        width: 100%; /* Permite que el paso ocupe todo el ancho. */
-        justify-content: center; /* Centra el contenido del paso. */
-    }
-
-    .line-segment .line {
-        width: 100%; /* Permite que la línea del segmento ocupe todo el ancho. */
-    }
-
-    .line-segment .dot {
-        flex-shrink: 0; /* Evita que el punto se encoja. */
-    }
-
-    .row > .col-md-6 { /* Permite que las secciones se apilen verticalmente en dispositivos móviles. */
-        width: 100%; /* Permite que las columnas ocupen todo el ancho. */
-        margin-bottom: 20px; /* Añade espacio entre las secciones apiladas. */
-    }
-
-    .row > .col-md-6:last-child {
-        margin-bottom: 0; /* Elimina el margen inferior de la última columna. */
+    .btn-confirm {
+        width: 100%;
+        padding: 10px 20px;
     }
 }
