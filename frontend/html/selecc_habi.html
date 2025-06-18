@@ -27,7 +27,7 @@
                         <li class="nav-item"><a class="nav-link" href="Home.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="habitaciones.html">Habitaciones</a></li>
                         <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="galeria.html">Galeria</a></li>
                     </ul>
                 </div>
             </div>
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="booking-item">
-                    <a class="reservar-btn" href="#" type="submit">
+                    <a class="reservar-btn" href="selecc_habi.html" type="submit">
                         Buscar
                     </a>
                 </div>
@@ -156,7 +156,8 @@
                         <div class="room-text">
                             <small>Breve descripción</small>
                             <p class="description">
-                                Cuenta con baño privado equipado con ducha, secador de pelo, TV de pantalla plana con canales por cable, minibar, armario y suelo de parquet. Desde la habitación, podrás disfrutar de una agradable vista al parque principal. 
+                                Habitacion individual que cuenta cuenta con baño privado equipado con ducha, TV de
+                                pantalla plana con canales por cable, armario.
                                 Además, incluye agua caliente y conexión Wi-Fi de alta velocidad.
                             </p>
                             <div class="icons">
@@ -173,7 +174,8 @@
                             <div class="footer-card">
                                 <span>Alojamiento</span>
                                 <span><strong>COP:</strong> $ 100.000</span>
-                                <a href="formularioreserva.html" class="btn-reservar">Reservar <i class="bi bi-chevron-right"></i></a>
+                                <a href="formularioreserva.html" class="btn-reservar" onclick="guardarReserva('Habitación Individual', '100.000')">Reservar <i
+                                        class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -191,8 +193,8 @@
                             <small>Breve descripción</small>
                             <p class="description">
                                 Disfruta de nuestra espaciosa habitación doble con dos camas individuales o una cama
-                                matrimonial, ideal para parejas o amigos. Cuenta con baño privado, TV con cable, minibar
-                                y balcón con vistas a la ciudad. Wi-Fi de alta velocidad incluido.
+                                matrimonial, ideal para parejas o amigos. Cuenta con baño privado, TV con cable.
+                                Wi-Fi de alta velocidad incluido.
                             </p>
                             <div class="icons">
                                 <i class="bi bi-wifi"></i>
@@ -207,12 +209,13 @@
                             <div class="footer-card">
                                 <span>Alojamiento</span>
                                 <span><strong>COP:</strong> $ 150.000</span>
-                                <a href="formularioreserva.html" class="btn-reservar">Reservar <i class="bi bi-chevron-right"></i></a>
+                                <a href="formularioreserva.html" class="btn-reservar" onclick="guardarReserva('Habitación Individual', '150.000')">Reservar <i
+                                        class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                </div>
+            </div>
         </section>
 
     </main>
@@ -230,7 +233,7 @@
                         <li><a href="Home.html">INICIO</a></li>
                         <li><a href="habitaciones.html">HABITACIONES</a></li>
                         <li><a href="servicios.html">SERVICIOS</a></li>
-                        <li><a href="#">GALERÍA</a></li>
+                        <li><a href="galeria.html">GALERÍA</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -251,6 +254,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/guardarreserva.js"></script>
     <script src="/js/script.js"></script>
     <script src="/js/scriptcarrusel.js"></script>
 </body>
