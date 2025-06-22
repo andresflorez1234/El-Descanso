@@ -1,0 +1,141 @@
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- El idioma del documento es español -->
+<head>
+    <meta charset="UTF-8" /> <!-- Codificación de caracteres (soporta caracteres especiales) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Escalado y diseño responsivo en dispositivos móviles -->
+    <title>Hotel Casa Luna</title> <!-- Título que aparece en la pestaña del navegador -->
+
+    <!-- Enlace al CSS de Bootstrap (versión 5.3.2) para usar estilos predefinidos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+
+    <!--enlace de icono de pagina externa-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Enlace a los íconos de Bootstrap (como el ícono de lista hamburguesa) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+    <!-- Enlace al archivo CSS personalizado -->
+    <link rel="stylesheet" href="/styles/habitacion.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header px-4 py-3 justify-content-between align-items-center position-relative">
+            <div class="d-flex align-items-center"> <!-- Contenedor del logo e ícono centrado -->
+            <img src="/img/nuevo.png" alt="Logo" class="logo me-3" /> <!-- Logo del hotel -->
+            </div>
+            <button class="cerrar">Cerrar sesión</button> <!-- Botón de cerrar sesión -->
+        </div>
+        <nav>
+            <ul class="menu">
+                <li>
+                    <a href="#">Habitaciones <span class="mini-boton">⌵</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Ver habitaciones</a></li>
+                        <li><a href="#">Reservas</a></li>                        
+                    </ul>
+                </li>
+                <li><a href="#">Galeria</a></li>
+                <li><a href="#">Historial de reserva</a></li>
+                <li>
+                    <a href="#">Perfil <span class="mini-boton">⌵</span></a>
+                    <ul class="submenu">
+                        <li><a href="#">Ver perfil</a></li>
+                        <li><a href="#">Actualizar datos</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <div class="home">
+            <h1>
+                Hotel casa luna
+            </h1>
+            <h2>
+                Tu descanso ideal comienza aquí
+            </h2>
+        </div>
+        <br>
+        <br>
+        <div class="Información">
+        <div class="texto">Calidez y Comodidad</div>
+            <h1 class="subtitulo">Habitaciones</h1>
+            <p class="texto-p">
+                Las habitaciones del Hotel Casa Luna combinan calidez y comodidad, <br>
+                ofreciendo un espacio acogedor con detalles que reflejan el encanto tradicional de Jardín.<br>
+                Diseñadas para el descanso, cada habitación cuenta con modernas comodidades en un ambiente tranquilo,<br>
+                muchas con vistas al parque principal o a las montañas,garantizando una experiencia <br>
+                placentera y auténtica para todos sus huéspedes.
+                </p>
+        </div>
+        <!--mastar page de habitaciones-->
+        <div class="habitacion">
+            <h1 class="titulo-h">Habitacion indidual </h1>
+            <img src="img/9.jpg" class="imagen">
+            <h2 class="pesos">COP: 
+                <h2 class="precio">
+                $ 200.000
+            </h2>
+            </h2>
+            <h4 class="descripcion-b">Breve descripción</h4>
+            <p class="descripcion-h">
+                Acogedora habitación con cama individual y baño privado equipado con ducha de agua caliente.  
+                Incluye TV de pantalla plana con cable, minibar y elegante suelo de parqué.
+                Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad.
+            </p>        
+            <div class="iconos">
+                <i class="bi bi-wifi"></i>
+                <i class="bi bi-tv"></i>
+                <i class="bi bi-clock-history"></i>
+                <i class="bi bi-thermometer-half"></i>
+                <i class="bi bi-people-fill"></i>
+                <i class="fas fa-shower"></i>
+            </div>
+            <form action="#">
+                <button type="submit" class="btn btn-danger">Ver habitacion</button>
+            </form>
+        </div>
+    </main>
+<br>
+    <footer>
+        <div>
+            <div>
+                <img src="/img/nuevo.png" class="s-logo" />
+                <h4 class="empresa">Hotel Casa Luna</h4>
+
+            </div>
+            <div class="centro">
+                <ul>
+                    <li>MAPA DE SITIO</li>
+                    <br>
+                    <li><a href="habitaciones.html">VER HABITACIONES</a></li>
+                    <li><a href="servicios.html">VER RESERVAS</a></li>
+                    <li><a href="galeria.html">HISTORIAL DEL RESERVAS</a></li>
+                    <li><a href="jardin-antioquia.html">GALERIA</a></li>
+                </ul>
+            </div>
+            <div class="derechos">
+                <ul>
+                    <li>ENLACES LEGALES</li>
+                    <br>
+                    <li><a href="soporte.html">SOPORTE</a></li>
+                    <li><a href="terminos.html">TÉRMINOS Y CONDICIONES</a></li>
+                    <li><a href="privacidad.html">POLÍTICA DE PRIVACIDAD</a></li>
+                    <li><a href="cookies.html">POLÍTICA DE COOKIES</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="descripcion">
+            <span >© 2025 Hotel Casa Luna. Todos los derechos reservados.</span>
+            <span class="creadores">© Desarrollado por el equipo acaf</span>
+        </div>
+    </footer>
+</body>
+</html>
+
