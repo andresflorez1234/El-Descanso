@@ -1,0 +1,127 @@
+{% extends 'reservas/base.html' %}
+{% load static %}
+
+{% block title %}Seleccionar-Habitacion | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservas/css/styles_select.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    {% include "reservas/seccion_destacada.html" with titulo_destacado="Reserva con Hotel Casa Luna" subtitulo_destacado="Para Que Disfrutes En Familia" %}
+
+
+    
+    <section aria-label="pasos del proceso de reserva">
+        <div class="barra-progreso">
+            <div class="stepper">
+                <div class="step completed">
+                    <div class="circle">
+                        <i class="bi bi-check-lg"></i>
+                    </div>
+                    <span>Seleccionar establecimiento</span>
+                </div>
+                <div class="line completed"></div>
+                <div class="step active-look">
+                    <div class="circle">
+                        <i class="bi bi-house-fill"></i>
+                    </div>
+                    <span>Seleccionar Habitación</span>
+                </div>
+                <div class="line"></div>
+                <div class="step">
+                    <div class="circle">
+                        <i class="bi bi-receipt"></i>
+                    </div>
+                    <span>Datos personales y pago</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="habitaciones">
+            <h2>Selecciona habitación</h2>
+
+            <div class="card">
+                <div class="room-header">
+                    <h4>1. Habitación Individual</h4>
+                    <span class="price"><strong>COP:</strong> $ 100.000</span>
+                </div>
+
+                <div class="room-info">
+                    <img src="{% static 'reservas/img/img-5.jpg' %}" alt="Habitación Individual" class="room-image">
+                    <div class="room-text">
+                        <small>Breve descripción</small>
+                        <p class="description">
+                            Habitacion individual que cuenta cuenta con baño privado equipado con ducha, TV de
+                            pantalla plana con canales por cable, armario.
+                            Además, incluye agua caliente y conexión Wi-Fi de alta velocidad.
+                        </p>
+                        <div class="icons">
+                            <i class="bi bi-wifi"></i>
+                            <i class="bi bi-tv"></i>
+                            <i class="bi bi-clock-history"></i>
+                            <i class="bi bi-thermometer-half"></i>
+                            <i class="bi bi-people-fill"></i>
+                            <i>
+                                <img src="{% static 'reservas/img/ducha.png' %}" alt="Baño privado" class="servicio-img">
+                            </i>
+                        </div>
+                        <div class="tarifa">Tarifa</div>
+                        <div class="footer-card">
+                            <span>Alojamiento</span>
+                            <span><strong>COP:</strong> $ 100.000</span>
+                            <a href="{% url 'formulario' %}" class="btn-reservar"
+                                onclick="guardarReserva('Habitación Individual', '100.000')">Reservar <i
+                                    class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="room-header">
+                    <h4>2. Habitación Doble</h4>
+                    <span class="price"><strong>COP:</strong> $ 150.000</span>
+                </div>
+
+                <div class="room-info">
+                    <img src="{% static 'reservas/img/habi_doble.jpg' %}" alt="Habitación Doble" class="room-image">
+                    <div class="room-text">
+                        <small>Breve descripción</small>
+                        <p class="description">
+                            Disfruta de nuestra espaciosa habitación doble con dos camas individuales o una cama
+                            matrimonial, ideal para parejas o amigos. Cuenta con baño privado, TV con cable.
+                            Wi-Fi de alta velocidad incluido.
+                        </p>
+                        <div class="icons">
+                            <i class="bi bi-wifi"></i>
+                            <i class="bi bi-tv"></i>
+                            <i class="bi bi-clock-history"></i>
+                            <i class="bi bi-thermometer-half"></i>
+                            <i class="bi bi-people-fill"></i><i>
+                                <img src="{% static 'reservas/img/ducha.png' %}" alt="Baño privado" class="servicio-img">
+                            </i>
+                        </div>
+                        <div class="tarifa">Tarifa</div>
+                        <div class="footer-card">
+                            <span>Alojamiento</span>
+                            <span><strong>COP:</strong> $ 150.000</span>
+                            <a href="{% url 'formulario' %}" class="btn-reservar"
+                                onclick="guardarReserva('Habitación Individual', '150.000')">Reservar <i
+                                    class="bi bi-chevron-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'reservas/js/guardarreserva.js' %}"></script>
+{% endblock %}
