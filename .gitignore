@@ -1,0 +1,12 @@
+# Base de datos de desarrollo
+db.sqlite3
+
+# Entornos virtuales
+env/
+venv/
+
+# Archivos de entorno
+.env
+
+# Archivos de configuración de VSCode
+.vscode/

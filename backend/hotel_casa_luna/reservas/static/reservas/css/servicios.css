@@ -1,0 +1,123 @@
+/* ========================================= */
+/* Estilos Globales y de la Sección Hero (sin cambios aquí) */
+/* ========================================= */
+
+.navbar-nav {
+    margin-right: 140px;
+}
+
+/* ========================================= */
+/* Estilos para la Sección de Lista de Servicios (sin cambios aquí) */
+/* ========================================= */
+.lista-servicios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    /* background-color: #e0e6eb; */
+}
+
+
+/* ========================================= */
+/* Estilos para la Tarjeta de Servicio Individual (.card) */
+/* ========================================= */
+
+.card {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid #b9b9b9;
+
+    /* ANCHO EXTERNO DE LA TARJETA: Ajusta este max-width para el ancho TOTAL de la tarjeta */
+    max-width: 950px; /* <--- AUMENTA ESTE VALOR para hacer la tarjeta MÁS ANCHA en general */
+    width: 100%; /* La tarjeta ocupará el 100% del espacio disponible hasta el max-width */
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    margin-bottom: 60px;
+
+    /* Estas son las propiedades clave para la distribución interna del contenido (ícono y texto) */
+    display: flex;
+    flex-direction: row; /* Asegura que el ícono y el contenido estén en fila */
+    align-items: center; /* Centra verticalmente el ícono y el contenido */
+    gap: 30px; /* Espacio entre el ícono y el bloque de texto */
+
+    /* AJUSTE CLAVE: Reducir o afinar el padding horizontal si está comprimiendo el contenido */
+    padding: 30px 40px; /* Ejemplo: 30px arriba/abajo, 40px izquierda/derecha. Ajusta '40px' */
+}
+
+/* ========================================= */
+/* Estilos para el Contenedor del Ícono (.icono) */
+/* ========================================= */
+
+.icono {
+    font-size: 80px;
+    color: #007934;
+    flex-shrink: 0; /* Evita que el ícono se haga más pequeño */
+}
+
+/* ========================================= */
+/* Estilos para el Contenido de Texto (.contenido) */
+/* ========================================= */
+
+.contenido {
+    flex: 1; /* Permite que este div ocupe todo el espacio horizontal restante dentro de .card */
+    text-align: left; /* Asegura que el texto se alinee a la izquierda, no centrado */
+    /* IMPORTANTE: ASEGÚRATE de que div.contenido NO tenga un max-width o width fijo
+       que lo esté limitando internamente. Si lo tiene, quítalo. */
+}
+
+.contenido h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+.contenido p {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+}
+
+
+/* ========================================= */
+/* Media Queries para Responsividad */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    .card {
+        flex-direction: column; /* Apila el icono y el contenido en pantallas pequeñas */
+        text-align: center; /* Centra el texto y el icono cuando están apilados */
+        padding: 25px; /* Reduce el padding en móviles */
+        gap: 15px;
+    }
+
+    .icono {
+        margin-bottom: 15px;
+    }
+
+    .contenido {
+        text-align: center; /* Centra el texto dentro del contenido cuando apilado */
+    }
+
+    .contenido h2 {
+        font-size: 1.5em;
+    }
+
+    .contenido p {
+        font-size: 0.95em;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    p.descripcion {
+        font-size: 14px;
+        padding: 0 15px;
+    }
+}

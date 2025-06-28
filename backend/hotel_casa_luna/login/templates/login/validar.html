@@ -1,0 +1,45 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title%}validar contraseña{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'login/css/validar.css'%}">
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+</head>
+<body>
+    <main>
+        <div class="contenedor-principal">
+            <div class="lado-izquierdo">
+                <h1>Hotel</h1>
+                <img src="{% static 'login/img/logotipo.png' %} ">
+            </div>
+
+            <div class="lado-derecho">
+                <h2 class="titulo-i">Recuperar contraseña</h2>
+                <div class="formulario">
+                    <p class="descripcion">Ingresa el codigo de verificacion <br>que se le envio al correo electronico</p>
+                    <div class="i-i">
+                        <input type="text" id="i-1" name="i-1" class="i-1">
+                        <p class="l-1">_</p>
+                        <input type="text" id="i-2" name="i-2" class="i-2">
+                        <p class="l-2">_</p>
+                        <input type="text" id="i-3" name="i-3" class="i-3">
+                        <p class="l-3">_</p> 
+                        <input type="text" id="i-4" name="i-4" class="i-4">
+                    </div>
+                </div>
+                <div>
+                    <form action="{% url 'restaurar'%}">
+                        <button type="submit" class="btn btn-validar">Validar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
