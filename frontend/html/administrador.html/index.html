@@ -1,0 +1,154 @@
+
+<!DOCTYPE html> <!-- Define el tipo de documento como HTML5 -->
+<html lang="es"> <!-- Comienza el documento HTML con el idioma español -->
+<head>
+    <meta charset="UTF-8" /> <!-- Define la codificación de caracteres como UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Asegura diseño responsivo en móviles -->
+    <title>Hotel Casa Luna</title> <!-- Título dinámico: puede ser sobrescrito por las páginas hijas -->
+
+    <!-- Bootstrap CSS desde CDN para estilos rápidos y responsivos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- Fuente personalizada desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
+    
+    <!-- Íconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    
+    <!-- Hoja de estilos personalizada del proyecto -->
+    <link rel="stylesheet" href="/listos/index.css" />
+</head>
+
+<body>
+    <header> <!-- Comienza la cabecera del sitio -->
+        <div class="header px-4 py-3 justify-content-between align-items-center position-relative">
+            <!-- Contenedor del logo -->
+            <div class="d-flex align-items-center">
+                <img src="/img/nuevo.png" alt="Logo" class="logo me-3" /> <!-- Logo del hotel -->
+            </div>
+            <button class="cerrar">Cerrar sesión</button> <!-- Botón de cierre de sesión -->
+        </div>
+
+        <nav> <!-- Menú de navegación principal -->
+            <ul class="menu">
+                <li>
+                    <a href="#">Habitaciones <span class="mini-boton">⌵</span></a> <!-- Menú desplegable de habitaciones -->
+                    <ul class="submenu">
+                        <li><a href="#">Ver habitaciones</a></li> <!-- Subopción: Ver habitaciones -->
+                        <li><a href="#">Reservas</a></li> <!-- Subopción: Reservas -->
+                    </ul>
+                </li>
+                <li><a href="#">Galeria</a></li> <!-- Opción: Galería -->
+                <li><a href="#">Historial de reserva</a></li> <!-- Opción: Historial de reservas -->
+                <li>
+                    <a href="#">Perfil <span class="mini-boton">⌵</span></a> <!-- Menú desplegable de perfil -->
+                    <ul class="submenu">
+                        <li><a href="#">Ver perfil</a></li> <!-- Subopción: Ver perfil -->
+                        <li><a href="#">Actualizar datos</a></li> <!-- Subopción: Actualizar datos -->
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main> <!-- Contenido principal de la página -->
+        <div class="home">
+            <h1>
+                Hotel casa luna
+            </h1>
+            <h2>
+                Tu descanso ideal comienza aquí
+            </h2>
+        </div>
+        <br>
+        <br>
+        <div class="Información">
+        <div class="texto">jardín antioquía</div>
+            <h1 class="subtitulo">Hotel casa luna</h1>
+            <p>
+                El Hotel Casa Luna, con su encanto tradicional, se ha consolidado como un <br> referente acogedor en el corazón de Jardín, Antioquia. Su arquitectura típica y su <br> cálido ambiente familiar realzan la belleza del pueblo, ofreciendo a los visitantes <br> una experiencia auténtica y tranquila en uno de los destinos más pintorescos de <br> Colombia.
+            </p>
+            <br>
+            <p>
+                Conocido por su atención personalizada y su ambiente hogareño, el hotel ha <br> recibido a viajeros de todas partes, quienes destacan su ubicación privilegiada — <br> a solo una cuadra del parque principal — y la comodidad de sus instalaciones.
+            </p>
+            <br>
+            <p>
+                Con habitaciones cómodas y bien equipadas, espacios ideales para el descanso y <br> un ambiente rodeado de naturaleza y cultura, el Hotel Casa Luna sigue siendo <br> una opción preferida para quienes desean descubrir el encanto de Jardín con <br> calidez y hospitalidad.
+            </p>
+        </div>
+        <div>
+            <!-- Sección de Habitaciones -->
+    <section class="habitaciones container my-5">
+        <h2 class="text-center mb-4">Habitaciones</h2>
+        <div class="row">
+            <!-- Habitación Individual -->
+            <div class="col-md-4 mb-4">
+                <div class="habitacion-card">
+                    <img src="/img/4.jpg" class="habitacion-img">
+                    <h3>Habitación Individual</h3>
+                    <p>
+                        Acogedora habitación con cama individual y baño privado equipado con ducha de agua caliente. Incluye TV de pantalla plana con cable, minibar y elegante suelo de parqué. Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad. Tu espacio personal de descanso y tranquilidad.
+                    </p>
+                </div>
+            </div>
+            <!-- Habitación Doble -->
+            <div class="col-md-4 mb-4">
+                <div class="habitacion-card">
+                    <img src="/img/6.jpg" alt="Habitación Doble" class="habitacion-img">
+                    <h3>Habitación Doble</h3>
+                    <p>
+                        Cómoda habitación con dos camas y baño privado equipado con ducha de agua caliente. Incluye TV de pantalla plana con cable, elegante suelo de parqué. Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad. Tu espacio personal de descanso y tranquilidad.
+                    </p>
+                </div>
+            </div>
+            <!-- Habitación Familiar -->
+            <div class="col-md-4 mb-4">
+                <div class="habitacion-card">
+                    <img src="/img/7.jpg" alt="Habitación Familiar" class="habitacion-img">
+                    <h3>Habitación Familiar</h3>
+                    <p>
+                        Espacio amplio para toda la familia Baño privado con ducha caliente TV cable y Wi-Fi gratuito de alta velocidad y armario espacioso Tu espacio personal de descanso y tranquilidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+    </main>
+
+    <footer> <!-- Comienza el pie de página -->
+        <div> <!-- Contenedor principal del footer -->
+            <div> <!-- Sección del logo en el footer -->
+                <img src="/img/nuevo.png" class="s-logo" /> <!-- Logo del hotel en pequeño -->            </div>
+
+            <div class="centro"> <!-- Mapa de sitio -->
+                <ul>
+                    <li>MAPA DE SITIO</li>
+                    <br>
+                    <li><a href="habitaciones.html">VER HABITACIONES</a></li> <!-- Enlace a habitaciones -->
+                    <li><a href="servicios.html">VER RESERVAS</a></li> <!-- Enlace a reservas -->
+                    <li><a href="galeria.html">HISTORIAL DEL RESERVAS</a></li> <!-- Enlace al historial -->
+                    <li><a href="jardin-antioquia.html">GALERIA</a></li> <!-- Enlace a galería -->
+                </ul>
+            </div>
+
+            <div class="derechos"> <!-- Sección de enlaces legales -->
+                <ul>
+                    <li>ENLACES LEGALES</li>
+                    <br>
+                    <li><a href="soporte.html">SOPORTE</a></li> <!-- Enlace a soporte -->
+                    <li><a href="terminos.html">TÉRMINOS Y CONDICIONES</a></li> <!-- Enlace a términos -->
+                    <li><a href="privacidad.html">POLÍTICA DE PRIVACIDAD</a></li> <!-- Enlace a política de privacidad -->
+                    <li><a href="cookies.html">POLÍTICA DE COOKIES</a></li> <!-- Enlace a política de cookies -->
+                </ul>
+            </div>
+        </div>
+
+        <div class="descripcion"> <!-- Descripción final del pie de página -->
+            <span>© 2025 Hotel Casa Luna. Todos los derechos reservados.</span> <!-- Derechos reservados -->
+            <span class="creadores">© Desarrollado por el equipo acaf</span> <!-- Créditos del equipo de desarrollo -->
+        </div>
+    </footer>
+</body>
+</html> 

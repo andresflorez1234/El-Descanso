@@ -1,0 +1,852 @@
+html {
+    font-size: 16px; /* Establece el tamaño de fuente base por defecto en 16 píxeles. */
+}
+
+/* Ajusta el tamaño de fuente base para pantallas más grandes (por ejemplo, televisores Full HD) */
+@media (min-width: 1920px) {
+    html {
+        font-size: 18px; /* Define un tamaño de fuente base ligeramente más grande para una mejor legibilidad en pantallas grandes. */
+    }
+}
+
+/* Ajusta el tamaño de fuente base para pantallas muy grandes (por ejemplo, televisores 4K) */
+@media (min-width: 2560px) {
+    html {
+        font-size: 20px; /* Establece un tamaño de fuente base aún más grande para resoluciones muy altas. */
+    }
+}
+
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #c7d2d5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Oculta cualquier desbordamiento horizontal para evitar barras de desplazamiento no deseadas. */
+}
+
+#header {
+    position: fixed; /* Fija el encabezado en la parte superior de la ventana. */
+    top: 0; /* Lo posiciona en la parte superior. */
+    width: 100%; /* Asegura que ocupe todo el ancho. */
+    z-index: 100; /* Le otorga un z-index alto para que esté por encima de otros elementos. */
+    background-color: transparent; /* Hace que el fondo sea transparente. */
+}
+
+.custom-navbar {
+    height: 100%; /* Define la altura de la barra de navegación personalizada. */
+    font-size: 20px; /* Establece el tamaño de fuente de la barra de navegación. (Se podría considerar cambiar a rem si se desea que escale con el tamaño de fuente del html). */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #027332; /* Establece el color de fondo de la barra de navegación. */
+    min-height: 80px; /* Establece una altura mínima. */
+    display: flex; /* Utiliza flexbox para alinear los elementos. */
+    align-items: center; /* Centra los elementos verticalmente. */
+}
+
+.navbar-nav {
+    padding-right: 160px; /* Le otorga un padding a la derecha a los elementos de navegación. */
+}
+
+
+/* Ajusta el padding de la barra de navegación para pantallas más grandes. */
+@media (min-width: 1200px) {
+    .navbar-nav {
+        padding-left: 5vw; /* Utiliza el ancho del viewport para un padding más dinámico. */
+    }
+}
+@media (min-width: 1920px) {
+    .navbar-nav {
+        padding-left: 10vw; /* Añade aún más padding en pantallas muy grandes. */
+    }
+}
+
+
+.custom-navbar>* {
+    margin: 0;
+    padding: 0 15px; /* Aplica padding horizontal. */
+    height: 40px;
+    line-height: 40px;
+    color: white; /* Establece el color de texto en blanco. */
+    display: flex; /* Utiliza flexbox para alinear. */
+    align-items: center; /* Centra verticalmente. */
+}
+
+.img {
+    height: 10px;
+}
+
+.navbar-brand,
+.nav-link {
+    color: white; /* Asegura que el color de los enlaces de la marca y de navegación sea blanco. */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ddd; /* Cambia el color del enlace al pasar el ratón por encima. */
+}
+
+/* Estilos para la sección destacado */
+.destacado {
+    position: relative; /* Posiciona esta sección de forma relativa para que los elementos internos absolutos se posicionen con respecto a ella. */
+    height: 565px; /* Establece una altura específica (o la altura deseada para el carrusel). */
+    min-height: 550px; /* Define una altura mínima. */
+    display: flex; /* Utiliza flexbox. */
+    flex-direction: column; /* Organiza los elementos en columna. */
+    justify-content: center; /* Centra el contenido verticalmente. */
+    align-items: center; /* Centra el contenido horizontalmente. */
+    text-align: center; /* Centra el texto. */
+    color: white; /* Establece el color de texto blanco. */
+    background-color: #555; /* Le da un color de fondo. */
+    margin-top: 77px; /* Añade un margen superior. */
+}
+
+/* Contenedor del carrusel de imágenes */
+#carrusel-fondo {
+    position: absolute; /* CRÍTICO: Posiciona este elemento de forma absoluta para que las imágenes se superpongan. */
+    top: 0; /* Lo coloca en la parte superior. */
+    left: 0; /* Lo coloca a la izquierda. */
+    width: 100%; /* Asegura que ocupe todo el ancho. */
+    height: 100%; /* Asegura que ocupe toda la altura. */
+    overflow: hidden; /* Asegura que las imágenes no sobresalgan de este contenedor. */
+    z-index: 0; /* Lo coloca en la parte inferior para que esté detrás del texto y el formulario. */
+}
+
+/* Imágenes individuales dentro del carrusel */
+.imagen-carrusel {
+    position: absolute; /* CRÍTICO: Posiciona las imágenes de forma absoluta para superponerlas. */
+    top: 0; /* Las coloca en la parte superior. */
+    left: 0; /* Las coloca a la izquierda. */
+    width: 100%; /* Asegura que ocupen todo el ancho. */
+    height: 100%; /* Asegura que ocupen toda la altura. */
+    object-fit: cover; /* CRÍTICO: Escala la imagen para cubrir el contenedor sin distorsionarla. */
+    object-position: center; /* CRÍTICO: Centra la imagen dentro del contenedor. */
+    opacity: 0; /* Las oculta por defecto. */
+    transition: opacity 1.5s ease-in-out; /* Añade una transición suave para el efecto de fade. */
+}
+
+.imagen-carrusel.visible {
+    opacity: 1; /* Muestra la imagen activa. */
+    z-index: 1; /* Asegura que la imagen visible esté por encima de las otras ocultas. */
+}
+
+/* Asegura que el texto y el formulario estén por encima del carrusel. */
+.destacado h1,
+.destacado p { /* Solo aplica al texto, el formulario ya tiene su propio posicionamiento. */
+    position: relative; /* Posiciona el texto de forma relativa. */
+    z-index: 2; /* Le otorga un z-index mayor que el de las imágenes para que se vean por encima. */
+    color: white; /* Establece el color de texto blanco. */
+    /* Para que el texto se posicione correctamente dentro del flujo normal. */
+    margin-bottom: 20px; /* Añade un poco de espacio si es necesario. */
+}
+.destacado h1 {
+    font-size: 60px; /* Establece el tamaño de fuente para el título. (Se podría considerar cambiar a rem, por ejemplo, 3.75rem). */
+}
+
+.destacado p {
+    font-size: 20px; /* Establece el tamaño de fuente para el párrafo. (Se podría considerar cambiar a rem, por ejemplo, 1.25rem). */
+}
+/* Ajusta los tamaños de fuente para la sección destacada en pantallas más grandes. */
+@media (min-width: 1600px) {
+    .destacado h1 {
+        font-size: 4.5rem; /* Aumenta el tamaño del encabezado para televisores. */
+    }
+    .destacado p {
+        font-size: 1.5rem; /* Aumenta el tamaño del texto para televisores. */
+    }
+}
+
+
+.booking-form {
+    position: absolute; /* Mantiene el posicionamiento absoluto. */
+    top: 80%; /* Mantiene la posición superior. */
+    left: 50%; /* Mantiene la posición izquierda. */
+    transform: translate(-50%, -50%); /* Mantiene la transformación para centrarlo. */
+    display: flex; /* Utiliza flexbox. */
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan. */
+    gap: 30px; /* Define el espacio entre los elementos. */
+    padding: 20px;
+    background: #d9dfe0; /* Establece el color de fondo. */
+    border-radius: 8px; /* Redondea las esquinas. */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Añade una sombra. */
+    max-width: 1255px; /* Establece un ancho máximo. */
+    width: 95%; /* Define el ancho en porcentaje. */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho. */
+    z-index: 10; /* CRÍTICO: Asegura que esté por encima de todo lo demás en la sección destacado. */
+    align-items: center; /* Centra los elementos verticalmente. */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos. */
+}
+
+/* Ajusta el formulario de reserva para pantallas más grandes. */
+@media (min-width: 1600px) {
+    .booking-form {
+        max-width: 1500px; /* Permite que sea más ancho en pantallas grandes. */
+        top: 75%; /* Ajusta la posición vertical si se siente demasiado baja. */
+        padding: 30px; /* Mayor padding interno. */
+        gap: 40px; /* Más espacio entre los elementos del formulario. */
+    }
+    .booking-item strong {
+        font-size: 1.1rem; /* Agranda ligeramente las etiquetas. */
+    }
+    .booking-form input[type="date"],
+    .booking-form .dropbtn {
+        padding: 15px; /* Agranda los campos de entrada y los botones. */
+        font-size: 1.1rem; /* Agranda la fuente dentro de las entradas/botones. */
+        min-height: 55px; /* Asegura una altura mayor para la interacción. */
+    }
+    .reservar-btn {
+        padding: 15px 35px; /* Agranda el botón de reserva. */
+        font-size: 1.4rem; /* Agranda la fuente del botón. */
+        height: 70px; /* Aumenta la altura del botón. */
+    }
+}
+
+
+.booking-form .dropdown {
+    position: relative; /* Posiciona el dropdown de forma relativa. */
+}
+
+.booking-item {
+    margin: 0;
+    display: flex; /* Utiliza flexbox. */
+    flex-direction: column; /* Organiza los elementos en columna. */
+    align-items: flex-start; /* Alinea los elementos al inicio. */
+    flex-grow: 1; /* Permite que el elemento crezca. */
+    flex-shrink: 1; /* Permite que el elemento se encoja. */
+    min-width: 140px; /* Establece un ancho mínimo. */
+}
+
+.booking-item strong {
+    margin-bottom: 5px; /* Añade un margen inferior. */
+    color: #333; /* Establece el color del texto. */
+    font-weight: bold; /* Pone el texto en negrita. */
+}
+
+/* Estilos para los inputs de fecha */
+.booking-form input[type="date"] {
+    padding: 10.5px;
+    cursor: pointer; /* Muestra un cursor de puntero. */
+    border: 1px solid #ccc; /* Añade un borde. */
+    border-radius: 4px; /* Redondea las esquinas. */
+    font-size: 14px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem, por ejemplo, 0.875rem). */
+    background-color: #f3f2f2; /* Le da un color de fondo. */
+    width: 85%; /* Define el ancho por defecto, si no tiene la clase específica. */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho. */
+}
+
+/* Estilos específicos para los inputs de fecha con la clase 'date-input-field' */
+.date-input-field {
+    max-width: 350px; /* Establece un ancho máximo. */
+    width: 350px; /* Establece un ancho fijo. */
+}
+
+
+/* Estilos del componente dropdown (integrado) */
+.booking-item.dropdown {
+    position: relative; /* Posiciona el dropdown de forma relativa. */
+    background: none; /* Elimina el fondo. */
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none; /* Elimina la sombra. */
+}
+
+/* Estilos para el botón del desplegable de Habitaciones y Personas */
+.booking-form .dropdown {
+    position: relative; /* Asegura que el contenido del dropdown se posicione correctamente. */
+}
+
+.booking-form .dropbtn {
+    /* Ajustes generales para el botón */
+    background-color: #f3f2f2; /* Establece el fondo blanco. */
+    padding: 10px 15px; /* Define el relleno interno. */
+    border: 1px solid #ccc; /* Añade un borde suave. */
+    border-radius: 5px; /* Redondea los bordes. */
+    cursor: pointer; /* Muestra un cursor de puntero al pasar el ratón. */
+    display: flex; /* Utiliza flexbox para alinear el contenido. */
+    justify-content: space-between; /* Espacia el texto y la flecha. */
+    align-items: center; /* Centra verticalmente. */
+    width: 100%; /* Ocupa todo el ancho disponible en su contenedor. */
+    font-size: 16px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem). */
+    text-align: left; /* Alinea el texto a la izquierda. */
+    min-height: 44px; /* Establece una altura mínima. */
+    max-width: 320px; /* Establece un ancho máximo. */
+    white-space: normal;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.dropbtn {
+    background: none; /* Elimina el fondo. */
+    border: 1px solid #e0e0e0; /* Añade un borde. */
+    padding: 10px 15px;
+    cursor: pointer; /* Muestra un cursor de puntero. */
+    font-size: 16px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem). */
+    border-radius: 5px; /* Más redondeado como en la imagen. */
+    width: 100%; /* Asegura que ocupe el espacio. */
+    text-align: left; /* Alinea el texto a la izquierda. */
+    display: flex; /* Utiliza flexbox. */
+    justify-content: space-between; /* Distribuye el espacio. */
+    align-items: center; /* Centra verticalmente. */
+    transition: all 0.2s ease-in-out; /* Añade una transición. */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho. */
+    height: 40px; /* Establece una altura. */
+}
+
+
+.dropdown-content {
+    display: none; /* Lo oculta por defecto. */
+    position: absolute; /* Lo posiciona absolutamente. */
+    background-color: #fff; /* Establece el fondo blanco. */
+    width: 320px; /* Establece el ancho. */
+    padding: 20px;
+    font-size: 14px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem). */
+    border: 1px solid #ccc; /* Añade un borde. */
+    border-radius: 5px; /* Redondea las esquinas. */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra. */
+    z-index: 10; /* Le otorga un z-index. */
+    margin-top: 8px; /* Añade un margen superior. */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho. */
+    min-width: 280px; /* Establece un ancho mínimo. */
+    max-width: 350px; /* Establece un ancho máximo. */
+}
+/* Ajusta el contenido del dropdown para pantallas más grandes. */
+@media (min-width: 1600px) {
+    .dropdown-content {
+        width: 380px; /* Hace que el dropdown sea más ancho. */
+        padding: 25px;
+        font-size: 1.1rem; /* Agranda la fuente dentro del dropdown. */
+        min-width: 350px;
+        max-width: 450px;
+    }
+    .dropdown-content .counter button {
+        width: 35px; /* Agranda los botones del contador. */
+        height: 35px;
+        font-size: 1.2rem;
+    }
+    .dropdown-content .counter input[type="number"] {
+        width: 50px; /* Agranda la entrada de número. */
+        font-size: 1.1rem;
+    }
+}
+
+
+.dropdown-content.show {
+    display: block; /* Muestra el dropdown cuando tiene la clase 'show'. */
+}
+
+.dropdown-content .row {
+    display: flex; /* Utiliza flexbox. */
+    align-items: center; /* Centra verticalmente. */
+    justify-content: space-between; /* Distribuye el espacio. */
+    padding: 8px 0; /* Define un padding más compacto. */
+    margin-bottom: 5px; /* Añade espacio entre filas. */
+}
+
+.dropdown-content .row:not(:last-child) {
+    border-bottom: 1px solid #f0f0f0; /* Añade un separador entre filas. */
+}
+
+.dropdown-content .label {
+    font-weight: 600; /* Pone el texto en negrita. */
+    color: #333; /* Establece el color del texto. */
+    flex-grow: 1; /* Permite que la etiqueta crezca. */
+}
+
+.dropdown-content .counter {
+    display: flex; /* Utiliza flexbox. */
+    align-items: center; /* Centra verticalmente. */
+    gap: 5px; /* Añade espacio entre botones y input. */
+}
+
+.dropdown-content .counter button {
+    background-color: #f0f0f0; /* Establece el fondo gris claro (movido de inline). */
+    color: #555; /* Establece el color del texto (movido de inline). */
+    border: none; /* Elimina el borde. */
+    border-radius: 50%; /* Hace los botones redondos. */
+    width: 28px; /* Establece el tamaño del botón. */
+    height: 28px; /* Establece el tamaño del botón. */
+    display: inline-flex; /* Los muestra como flexbox en línea. */
+    align-items: center; /* Centra verticalmente. */
+    justify-content: center; /* Centra horizontalmente. */
+    font-size: 16px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem). */
+    line-height: 1; /* Asegura que el texto se centre verticalmente. */
+    cursor: pointer; /* Muestra un cursor de puntero. */
+    transition: background-color 0.2s ease-in-out; /* Añade una transición. */
+}
+
+.dropdown-content .counter button:hover {
+    background-color: #e0e0e0; /* Cambia el fondo al pasar el ratón. */
+}
+
+.dropdown-content .counter input[type="number"] {
+    width: 40px; /* Establece un ancho más pequeño (movido de inline). */
+    padding: 5px 0; /* Define un padding vertical. */
+    text-align: center; /* Centra el texto. */
+    border: 1px solid #ccc; /* Añade un borde más sutil (movido de inline). */
+    border-radius: 3px; /* Redondea las esquinas. */
+    font-size: 14px; /* Establece un tamaño de fuente más pequeño. (Se podría considerar cambiar a rem). */
+    color: #333; /* Establece el color del texto. */
+}
+
+/* Estilos para las filas de edad de niños generadas dinámicamente */
+#childAgesContainer {
+    margin-top: 15px; /* Añade un margen superior (movido de inline, estaba en 1rem). */
+    padding-top: 10px; /* Añade un padding superior (movido de inline, estaba en 1rem). */
+    border-top: 1px solid #e0e0e0; /* Añade un borde superior. */
+}
+
+#childAgesContainer .row {
+    margin-bottom: 8px; /* Añade espacio entre filas de niños. */
+}
+
+#childAgesContainer .row:last-child {
+    margin-bottom: 0; /* Elimina el margen inferior de la última fila. */
+    border-bottom: none; /* Elimina el borde inferior de la última fila. */
+}
+
+#childAgesContainer .label.fw-bold {
+    margin-bottom: 10px; /* Añade un margen inferior. */
+    font-weight: bold; /* Pone el texto en negrita. */
+    color: #4a4a4a; /* Establece el color del texto. */
+}
+
+.child-age-input {
+    width: 40px ; /* Fuerza el ancho para los inputs de edad de niños. */
+    padding: 5px 0 ;
+    text-align: center ;
+    border: 1px solid #ddd ;
+    border-radius: 3px ;
+    font-size: 14px ; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem). */
+}
+
+/* Estilos para el botón "USA ESTA COMBINACIÓN" */
+.dropdown-content .use-btn {
+    background-color: #027332; /* Establece el color de fondo. */
+    color: white; /* Establece el color de texto blanco. */
+    border: none; /* Elimina el borde. */
+    padding: 12px;
+    width: 100%; /* Asegura que ocupe todo el ancho. */
+    text-align: center; /* Centra el texto. */
+    border-radius: 5px; /* Redondea las esquinas. */
+    cursor: pointer; /* Muestra un cursor de puntero. */
+    margin-top: 15px; /* Añade un margen superior. */
+    font-size: 16px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem). */
+    font-weight: 600; /* Pone el texto en seminegrita. */
+    transition: background-color 0.2s ease-in-out; /* Añade una transición. */
+}
+
+.dropdown-content .use-btn:hover {
+    background-color: #027332; /* Oscurece ligeramente el verde al pasar el ratón para mayor consistencia. */
+}
+
+
+/* Estilos para el botón de Reservar */
+.reservar-btn {
+    background-color: #027332; /* Establece el color de fondo. */
+    color: white; /* Establece el color de texto blanco. */
+    border: none; /* Elimina el borde. */
+    padding: 12px 27px; /* Ajusta el padding si se desea más espacio interno. */
+    border-radius: 8px; /* Mantiene el borde redondeado, o lo cambia a un valor menor como 5px si se desea menos redondeo. */
+    font-size: 20px; /* Ajusta el tamaño de la fuente si es necesario. (Se podría considerar cambiar a rem). */
+    font-weight: 600; /* Pone el texto en seminegrita. */
+    transition: background-color 0.2s ease-in-out; /* Añade una transición. */
+    align-self: flex-end; /* Lo alinea al final del contenedor flex. */
+    margin-top: 9px; /* Añade un margen superior. */
+    height: 62px; /* Ajusta la altura si se desea un botón más alto o más bajo. */
+    text-decoration: none;
+    padding-top: 15px; /* Aumenta este valor para bajar el texto */
+}
+.reservar-btn:hover {
+    background-color: #027332; /* Utiliza un tono más oscuro de verde al pasar el mouse. */
+}
+
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .booking-form {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna. */
+        gap: 10px; /* Reduce el espacio entre elementos. */
+        padding: 15px;
+        width: 95%; /* Ajusta el ancho. */
+        top: 65%; /* Ajusta la posición superior. */
+    }
+
+    .booking-form label,
+    .booking-form select,
+    .booking-form input[type="date"],
+    .booking-form button {
+        width: 100%; /* Asegura que ocupen todo el ancho. */
+    }
+
+    .dropdown-content {
+        width: 100%; /* Hace que el dropdown ocupe todo el ancho disponible en móviles. */
+    }
+}
+
+.jardin-antioquia h2 {
+    font-size: 10px; /* Establece el tamaño de fuente para el título. (Se podría considerar cambiar a rem). */
+    text-transform: uppercase; /* Transforma el texto a mayúsculas. */
+    letter-spacing: 2px; /* Añade espacio entre letras. */
+    color: #027332; /* Establece el color del texto. */
+    margin-bottom: 20px; /* Añade un margen inferior. */
+}
+
+/* Estilos para la sección de Habitaciones */
+.habitaciones {
+    padding: 40px 15px;
+    max-width: 1400px; /* Establece un ancho máximo. */
+    margin: 0 auto; /* Centra el elemento horizontalmente. */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal. */
+}
+
+@media (min-width: 1600px) { /* Media query para pantallas muy grandes (por ejemplo, televisores) */
+    .habitaciones {
+        max-width: 1800px; /* Permite que sea aún más ancho en pantallas muy grandes. */
+        padding: 60px 50px; /* Mayor padding para pantallas más grandes. */
+    }
+    .habitacion-card h3 {
+        font-size: 2rem; /* Aumenta el tamaño de fuente para una mejor legibilidad en televisores. */
+    }
+    .habitacion-card p {
+        font-size: 1.2rem; /* Aumenta el tamaño de fuente. */
+    }
+    .habitacion-img {
+        height: 250px; /* Hace la altura de la imagen ligeramente más grande para televisores. */
+    }
+}
+
+
+.habitacion-card {
+    background-color: #d9dfe0; /* Establece el color de fondo. */
+    border-radius: 8px; /* Redondea las esquinas. */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra. */
+    padding: 20px;
+    text-align: center; /* Centra el texto. */
+    height: 100%; /* Asegura que ocupe toda la altura disponible. */
+    display: flex; /* Utiliza flexbox. */
+    flex-direction: column; /* Organiza los elementos en columna. */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos. */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Añade transiciones para la sombra y la transformación. */
+}
+
+.habitacion-card:hover {
+    transform: translateY(-9px); /* Eleva la tarjeta ligeramente al pasar el ratón. */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2); /* Agranda la sombra al pasar el ratón. */
+}
+
+.habitacion-img {
+    width: 100%; 
+    height: 200px; /* Se mantiene esto por ahora, pero se es consciente de sus limitaciones. */
+    object-fit: cover; /* Escala la imagen para cubrir el contenedor. */
+    border-radius: 8px 8px 0 0; /* Redondea las esquinas superiores. */
+    background-color: #000000; /* Establece un color de fondo. */
+    transition: transform 0.3s ease; /* Añade una transición para la transformación. */
+}
+
+.habitacion-card:hover .habitacion-img {
+    transform: scale(1.1); /* Agranda la imagen al pasar el ratón por la tarjeta. */
+}
+
+.habitacion-card h3 {
+    font-size: 1.5rem; /* Utiliza rem para una mejor escalabilidad. */
+    color: #027332; /* Establece el color del texto. */
+    margin: 15px 0; /* Añade margen vertical. */
+}
+
+.habitacion-card p {
+    font-size: 1rem; /* Utiliza rem para una mejor escalabilidad. */
+    color: #333; /* Establece el color del texto. */
+    line-height: 1.6; /* Establece la altura de línea. */
+    flex-grow: 1; /* Permite que el párrafo crezca. */
+}
+
+
+@media (max-width: 991.98px) {
+    .habitacion-card h3 {
+        font-size: 1.6rem; /* Ajusta el tamaño de fuente. */
+    }
+    .habitacion-card p {
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente. */
+    }
+    .habitacion-img {
+        height: 180px; /* Ajusta la altura de la imagen. */
+    }
+}
+
+@media (max-width: 767.98px) {
+    .habitaciones {
+        padding: 40px 15px; /* Mayor padding en los lados en móviles. */
+    }
+    /* El selector .habitaciones h2 no está definido en el CSS proporcionado,
+        pero usualmente un encabezado escalaría con los tamaños de fuente definidos en html/body. */
+    .habitacion-img {
+        height: 200px; /* Puede revertirse a 200px en móviles para imágenes más grandes. */
+    }
+    .habitacion-card {
+        padding: 15px; /* Ajusta el padding de la tarjeta. */
+    }
+    .habitacion-card h3 {
+        font-size: 1.5rem; /* Ajusta el tamaño de fuente. */
+    }
+    /* Este bloque de media query existe dos veces en el CSS original, se ha mantenido una vez para mayor claridad. */
+    .habitacion-img {
+        height: 150px; /* Esta era la que estaba en la segunda ocurrencia, se mantiene para móvil. */
+    }
+    .habitacion-card {
+        padding: 15px; /* Ajusta el padding de la tarjeta. */
+    }
+    .habitacion-card h3 {
+        font-size: 1.3rem; /* Ajusta el tamaño de fuente. */
+    }
+    .habitacion-card p {
+        font-size: 0.9rem; /* Ajusta el tamaño de fuente. */
+    }
+}
+
+
+@media (max-width: 575.98px) {
+    .habitacion-card {
+        margin-bottom: 20px; /* Espacio entre tarjetas en columnas individuales. */
+    }
+}
+
+.link-habi {
+    color: #027332; /* Establece el color del texto. */
+    font-size: 24px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem, por ejemplo, 1.5rem). */
+    display: flex; /* Utiliza flexbox. */
+    align-items: center; /* Centra verticalmente. */
+    justify-content: center; /* Centra el enlace para una mejor presentación en todas las pantallas. */
+    margin-top: 30px; /* Añade algo de espacio por encima. */
+}
+
+.link-habi i.bi-link-45deg {
+    font-size: 30px; /* Establece el tamaño de fuente. (Se podría considerar cambiar a rem, por ejemplo, 1.875rem). */
+    margin-left: 15px; /* Ajusta el margen para un mejor espaciado. */
+}
+
+@media (min-width: 1200px) {
+    .link-habi {
+        font-size: 1.8rem; /* Ajusta el tamaño de fuente. */
+    }
+    .link-habi i.bi-link-45deg {
+        font-size: 2.2rem; /* Ajusta el tamaño de fuente del ícono. */
+        margin-left: 20px; /* Ajusta el margen del ícono. */
+    }
+}
+
+
+.services-box {
+    /* Elimina el margin-left fijo y lo centra. */
+    margin: 40px auto; /* Añade margen vertical y lo centra horizontalmente. */
+    background-color: #d9dfe0; /* Establece el color de fondo. */
+    border-radius: 8px; /* Redondea las esquinas. */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra. */
+    padding: 20px;
+    /* Ajusta el ancho máximo para pantallas más grandes. */
+    max-width: 1400px; /* Aumenta el ancho máximo. */
+    box-sizing: border-box; /* Asegura que el padding esté incluido en el ancho. */
+}
+
+@media (min-width: 1600px) { /* Media query para pantallas muy grandes (por ejemplo, televisores) */
+    .services-box {
+        max-width: 1800px; /* Permite que sea aún más ancho en pantallas muy grandes. */
+        padding: 40px; /* Mayor padding para pantallas más grandes. */
+    }
+    .servicio-icono {
+        font-size: 3.5rem; /* Agranda los íconos para TV. */
+    }
+    .servicio p {
+        font-size: 1.3em; /* Agranda el texto para TV. */
+    }
+}
+
+
+.servicios {
+    display: grid; /* Utiliza grid. */
+    /* auto-fit es bueno, pero se podría querer establecer explícitamente más columnas en pantallas más grandes. */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Define las columnas de la cuadrícula. */
+    gap: 40px; /* Mantiene el espacio entre elementos, pero podría estirar los elementos en pantallas muy grandes. */
+    /* Elimina el max-width aquí, deja que el padre lo controle. */
+    /* Elimina el margen en conflicto. */
+    /* margin: 10px; */ /* Este margen era demasiado pequeño y potencialmente problemático. */
+    text-align: center; /* Centra el texto. */
+    font-family: sans-serif;
+    padding: 0 15px; /* Añade un padding interno para evitar que el contenido toque los bordes. */
+}
+
+@media (min-width: 1200px) {
+    .servicios {
+        /* En pantallas más grandes, se podrían desear más columnas. */
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Aumenta el minmax para elementos más grandes. */
+        gap: 50px; /* Espacio potencialmente mayor en pantallas más grandes. */
+    }
+}
+
+@media (min-width: 1600px) {
+    .servicios {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Utiliza un minmax aún más grande para TV. */
+        gap: 60px; /* Mayor espacio para TV. */
+    }
+}
+
+.servicio-img {
+    width: 40px; /* Establece el ancho de la imagen del servicio. */
+    height: 60px; /* Establece la altura. */
+    object-fit: contain; /* Escala la imagen para que quepa dentro del contenedor. */
+    color: #027332; /* Establece el color. */
+}
+
+.servicio p {
+    margin: 0;
+    font-size: 1.1em; /* Utiliza em para la escalabilidad dentro del componente. */
+    color: #333; /* Establece el color del texto. */
+}
+
+.servicio-icono {
+    font-size: 2.5rem; /* Utiliza rem para la escalabilidad. */
+    color: #027332; /* Establece el color del ícono. */
+}
+
+
+footer {
+    background-color: #027332; /* Establece el color de fondo del pie de página. */
+    color: white; /* Establece el color de texto blanco. */
+    padding: 20px;
+    font-family: sans-serif;
+    position: relative;
+}
+
+.flecha-scroll {
+    position: absolute;
+    top: -35px; /* La aleja más del borde */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.flecha-scroll i {
+    font-size: 2.5rem; /* Aumenta el tamaño de la flecha */
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+.flecha-scroll i:hover {
+    transform: scale(1.2);
+    color: #cccccc;
+}
+
+
+
+.footer-content {
+    display: flex; /* Utiliza flexbox. */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos. */
+    align-items: flex-start; /* Alinea los elementos al inicio. */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan. */
+}
+
+.footer-logo {
+    display: flex; /* Utiliza flexbox. */
+    flex-direction: column; /* Organiza los elementos en columna. */
+    align-items: center; /* Centra los elementos horizontalmente. */
+    text-align: center; /* Centra el texto. */
+}
+
+.footer-logo img {
+    width: 70px; /* Establece el ancho de la imagen del logo. */
+    height: auto; /* Ajusta la altura automáticamente. */
+    margin-right: 100px; /* Considerar si este margen es el deseado para móviles/responsive. */
+    color: #027332; /* Establece el color. */
+}
+
+.footer-logo h4 {
+    margin-top: 5px; /* Añade un margen superior. */
+    font-weight: bold; /* Pone el texto en negrita. */
+}
+
+.footer-columns {
+    display: flex; /* Utiliza flexbox. */
+    gap: 50px; /* Define el espacio entre las columnas. */
+}
+
+.footer-column-1 p {
+    font-size: 12px; /* Establece el tamaño de fuente. */
+    font-weight: bold; /* Pone el texto en negrita. */
+    margin-bottom: 5px; /* Añade un margen inferior. */
+    margin-right: 400px; /* Considerar si este margen es el deseado para móviles/responsive. */
+}
+
+.footer-column-1 ul,
+.footer-column ul {
+    list-style: none; /* Elimina los estilos de lista. */
+    padding: 0; /* Elimina el padding. */
+    margin: 0; /* Elimina el margen. */
+    font-size: 11px; /* Establece el tamaño de fuente. */
+}
+
+.footer-column-1 li,
+.footer-column li {
+    margin-bottom: 3px; /* Añade un margen inferior. */
+}
+
+.footer-column-1 a,
+.footer-column a {
+    color: white; /* Establece el color de los enlaces en blanco. */
+    text-decoration: none; /* Elimina la decoración del texto. */
+}
+
+.footer-column-1 a:hover,
+.footer-column a:hover {
+    text-decoration: underline; /* Subraya los enlaces al pasar el ratón. */
+}
+
+.footer-column p {
+    font-size: 12px; /* Establece el tamaño de fuente. */
+    font-weight: bold; /* Pone el texto en negrita. */
+    margin-bottom: 5px; /* Añade un margen inferior. */
+}
+
+.footer-bottom {
+    margin-top: 20px; /* Añade un margen superior. */
+    display: flex; /* Utiliza flexbox. */
+    justify-content: space-between; /* Distribuye el espacio. */
+    font-size: 12px; /* Establece el tamaño de fuente. */
+}
+
+/* Ajustes para el logo y columnas del footer en pantallas pequeñas */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna. */
+        align-items: center; /* Centra los elementos horizontalmente. */
+        text-align: center; /* Centra el texto. */
+    }
+
+    .footer-logo img {
+        margin-right: 0; /* Elimina el margen en móviles. */
+    }
+
+    .footer-column-1 p,
+    .footer-column p {
+        margin-right: 0; /* Elimina el margen en móviles. */
+        text-align: center; /* Centra el texto. */
+        width: 100%; /* Asegura que ocupe el ancho completo. */
+    }
+
+    .footer-columns {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna. */
+        gap: 20px; /* Reduce el espacio entre elementos. */
+        width: 100%; /* Asegura que ocupe el ancho completo. */
+        align-items: center; /* Centra los elementos. */
+    }
+
+    .footer-column-1 ul,
+    .footer-column ul {
+        text-align: center; /* Centra el texto. */
+    }
+
+    .footer-bottom {
+        flex-direction: column; /* Cambia la dirección del flexbox a columna. */
+        text-align: center; /* Centra el texto. */
+        gap: 5px; /* Reduce el espacio entre elementos. */
+    }
+}
