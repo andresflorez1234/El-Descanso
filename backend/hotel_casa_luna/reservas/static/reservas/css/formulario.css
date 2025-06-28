@@ -1,0 +1,422 @@
+/* FORMULARIO.CSS */
+
+/* --- AJUSTES PARA LA SECCIÓN "RESUMEN DE LA RESERVA" (LA CAJA VERDE) --- */
+.comprobante-reserva {
+    display: none;
+    background-color: #fff;
+    border: 2px solid #027332;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.comprobante-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.comprobante-logo {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.comprobante-header h2 {
+    color: #027332;
+    margin-bottom: 5px;
+}
+
+.comprobante-sub {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.comprobante-body {
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.comprobante-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #ccc;
+    padding: 6px 0;
+}
+
+.comprobante-total {
+    text-align: right;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.comprobante-footer {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.resumen-box {
+    /* Mantén estas propiedades, son la base flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #027332;
+    color: white;
+    padding: 20px 30px;
+    margin-bottom: 25px;
+}
+
+#peticion-area {
+    min-height: 200px; /* Ajusta el número a tu gusto */
+}
+
+.resumen-box>.col-md-4 {
+    /* Selecciona el col-md-4 que es hijo directo de .resumen-box */
+    flex-shrink: 0;
+    /* Fuerza a que no se encoja, incluso si Bootstrap lo intenta */
+    max-width: 30%;
+    /* Fuerza el ancho máximo */
+    text-align: right;
+    /* ¡Fuerza la alineación a la derecha! */
+}
+
+/* Asegura que la columna de la izquierda ocupe su espacio */
+.resumen-box>.col-md-8 {
+    /* Selecciona el col-md-8 que es hijo directo de .resumen-box */
+    flex-grow: 1;
+    /* Fuerza a que crezca */
+    max-width: 70%;
+    /* Fuerza el ancho máximo */
+}
+
+/* --- ESTILOS ORIGINALES (MANTENIDOS) --- */
+.barra-progreso {
+    background-color: #e7e7e7;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-width: 1345px;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar-nav {
+    padding-right: 125px;
+}
+
+.stepper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    margin: 40px auto;
+    position: relative;
+    background-color: transparent;
+    padding: 0;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    background-color: #fcfcfc;
+    border-radius: 50px;
+    padding: 8px 18px;
+    font-size: 14px;
+    color: #333;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.step .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background-color: #027332;
+    flex-shrink: 0;
+}
+
+.step i {
+    color: #fff;
+    font-size: 1.1em;
+    margin-right: 0;
+}
+
+.step.completed .circle {
+    background-color: #027332;
+}
+
+.step.completed i {
+    color: #fff;
+}
+
+.step.active-look .circle {
+    background-color: #027332;
+}
+
+.step.active-look i {
+    color: #fff;
+}
+
+.stepper .line {
+    flex-grow: 1;
+    height: 4px;
+    background-color: #027332;
+    position: relative;
+    z-index: 1;
+    margin: 0 -10px;
+}
+
+.stepper .line.completed {
+    background-color: #027332;
+}
+
+.resumen-titulo {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.resumen-texto {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.resumen-total {
+    font-size: 0.8em;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.resumen-sub {
+    font-size: 0.7em;
+    display: block;
+}
+
+.resumen-precio {
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.nota {
+    background-color: #fefce8;
+    border-left: 5px solid #fbd38d;
+    padding: 15px 20px;
+    color: #6b460c;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 100%;
+}
+
+.subir-nota {
+    position: relative;
+    top: -25px;
+    height: 120px;
+}
+
+.nota strong {
+    color: #4a320c;
+}
+
+.form-section {
+    background-color: #f3f2f2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    height: auto;
+}
+
+.form-control {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.95rem;
+    height: 38px;
+}
+
+.form-check-label {
+    font-weight: normal;
+    font-size: 11px;
+    margin-right: 50px;
+}
+
+.form-check-input {
+    transform: scale(1.1);
+    margin-right: 0.5rem;
+}
+
+.link-legal {
+    color: #027332;
+    text-decoration: underline;
+}
+
+.link-legal:hover {
+    color: #027332;
+    text-decoration: none;
+}
+
+.container.main-center {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.fondo-div {
+    background-color: #f0f0f0;
+    padding: 15px 40px;
+    border-radius: 8px;
+}
+
+.contenedor_dos {
+    max-width: 930px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 8px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #495057;
+    margin-bottom: 5px;
+}
+
+.form-control:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+}
+
+.special-request-box {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.special-request-text {
+    color: #6c757d;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.terms-section {
+    font-size: 12px;
+    color: #6c757d;
+    margin-top: 15px;
+}
+
+.terms-text {
+    margin-bottom: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+.checkbox-item label {
+    margin: 0;
+    line-height: 1.4;
+}
+
+.btn-confirm {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+    padding: 10px 25px;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+.btn-confirm:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+@media (min-width: 768px) {
+    .row.mt-4 {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .row.mt-4>.col-md-6 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .row.mt-4>.col-md-6 .form-section {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+
+/* --- MEDIA QUERIES (AJUSTES PARA MÓVILES/TABLETS) --- */
+
+@media (max-width: 992px) {
+
+    .resumen-box {
+        flex-direction: column !important;
+        /* Fuerza el apilamiento */
+        text-align: center !important;
+        /* Fuerza el centrado general */
+        padding: 10px 20px;
+    }
+
+    .resumen-box>.col-md-4 {
+        /* Selector más específico */
+        margin-top: 15px !important;
+        max-width: 100% !important;
+        /* Fuerza el ancho completo */
+        text-align: center !important;
+        /* Fuerza el centrado individual */
+    }
+
+    .resumen-box>.col-md-8 {
+        /* Selector más específico */
+        max-width: 100% !important;
+        /* Fuerza el ancho completo */
+        text-align: center !important;
+        /* Fuerza el centrado individual */
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .btn-confirm {
+        width: 100%;
+        padding: 10px 20px;
+    }
+}

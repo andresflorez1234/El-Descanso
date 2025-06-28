@@ -1,0 +1,94 @@
+{% extends 'reservas/base.html' %}
+{% load static %}
+
+{% block title %}Buscar-Habitaciones | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservas/css/reservar.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    {% include "reservas/seccion_destacada.html" with titulo_destacado="Busca Habitacion Con El Hotel Casa Luna" mostrar_formulario=False %}
+    <div class="container py-5">
+        <h5 class="mb-4">¡Reserva ahora no pierdas esta oportunidad!</h5>
+        <div class="row g-3 mb-3">
+            <div class="col-md-6">
+                <div class="card-custom">
+                    <div class="icon-labell mb-1">
+                        <i class="bi bi-geo-alt"></i> Destino
+                    </div>
+                    <div>Hotel Casa Luna</div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card-custom">
+                    <div class="icon-label mb-1">
+                        <i class="bi bi-calendar3"></i> Fechas
+                    </div>
+                    <div class="d-flex align-items-center gap-3">
+                        <div>
+                            <label for="fecha-entrada" class="form-label mb-0">Entrada</label>
+                            <input type="date" id="fecha-entrada" class="form-control form-control-sm">
+                        </div>
+                        <div>
+                            <label for="fecha-salida" class="form-label mb-0">Salida</label>
+                            <input type="date" id="fecha-salida" class="form-control form-control-sm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-custom mb-3">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <strong>Habitación y ocupación</strong>
+                <span class="btn-add-room" onclick="agregarHabitacion()">+ AÑADIR HABITACIÓN</span>
+            </div>
+
+            <div id="habitaciones">
+                <div class="row mb-2 align-items-center room-row" id="habitacion-1">
+                    <div class="col-md-2 fw-semibold">Habitación 1</div>
+                    <div class="col-md-4 d-flex align-items-center gap-2">
+                        Adultos
+                        <div class="counter-box">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="cambiarCantidad(this, -1)">−</button>
+                            <span>1</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="cambiarCantidad(this, 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center gap-2">
+                        Niños
+                        <div class="counter-box">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="cambiarCantidad(this, -1, true)">−</button>
+                            <span>0</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="cambiarCantidad(this, 1, true)">+</button>
+                            <div class="w-100 mt-2" id="edades-habitacion-1">
+                                <small class="text-muted">Edades de los niños</small>
+                                <div class="d-flex flex-wrap gap-2 mt-1"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2 text-end">
+                        <a class="text-danger" onclick="eliminarHabitacion(event, 'habitacion-1')">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-end mt-3">
+                <a href="{% url 'seleccionar_habi' %}" class="btn btn-search" onclick="buscar()">BUSCAR</a>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'reservas/js/buscar.js' %}"></script>
+{% endblock %}

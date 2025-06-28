@@ -1,0 +1,120 @@
+{% extends 'reservas/base.html' %}
+{% load static %}
+
+{% block title %}Servicios | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'reservas/css/servicios.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    {% include "reservas/seccion_destacada.html" with titulo_destacado="Servicios Del Hotel Casa Luna" %}
+
+    <section class="jardin-antioquia text-center py-5 container-fluid" aria-label="Información sobre el hotel">
+        <h2 class="mb-3">PRIORICEMOS TU COMODIDAD</h2>
+        <h1>Servicios del Hotel Casa Luna</h1>
+        <p class="lead mx-auto">
+            En Hotel Casa Luna te ofrecemos todo lo necesario para una estadía cómoda y tranquila en el bello pueblo
+            de Jardín.
+        </p>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono">
+                <i class="bi bi-wifi"></i>
+            </div>
+            <div class="contenido">
+                <h2>Internet</h2>
+                <p>Disfruta de conexión Wi-Fi gratuita durante toda tu estadía, ideal para mantenerte comunicado,
+                    trabajar o simplemente relajarte navegando por tus sitios favoritos.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono">
+                <i class="bi bi-tv"></i>
+            </div>
+            <div class="contenido">
+                <h2>Televisión</h2>
+                <p>Cada habitación cuenta con televisión para tu entretenimiento, con canales locales y
+                    nacionales para que te sientas como en casa.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono">
+                <i class="bi bi-clock-history"></i>
+            </div>
+            <div class="contenido">
+                <h2>Recepción 24 horas</h2>
+                <p>Nuestro equipo está disponible las 24 horas del día para atender tus necesidades, brindarte
+                    información turística o ayudarte con lo que necesites durante tu visita.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono">
+                <i class="bi bi-thermometer-half"></i>
+            </div>
+            <div class="contenido">
+                <h2>Agua Caliente</h2>
+                <p>Relájate con agua caliente gracias a nuestras duchas eléctricas, pensadas para tu comodidad
+                    a cualquier hora del día.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono">
+                <i class="bi bi-people-fill"></i>
+            </div>
+            <div class="contenido">
+                <h2>Ambiente Familiar</h2>
+                <p>Ofrecemos un entorno tranquilo y seguro, ideal para compartir en familia y disfrutar de una
+                    estadía acogedora en el corazón de Jardín.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono">
+                <i class="bi"><img src="{% static 'reservas/img/ducha.png' %}" alt="Baño Privado" style="width: 80px;"> </i>
+            </div>
+            <div class="contenido">
+                <h2>Baño Privado</h2>
+                <p>Todas nuestras habitaciones están equipadas con baño privado, garantizando privacidad, comodidad
+                    y
+                    limpieza en cada momento de tu visita.</p>
+            </div>
+        </article>
+    </section>
+
+    <section class="lista-servicios">
+        <article class="card">
+            <div class="icono-img">
+                <i class="bi"><img src="{% static 'reservas/img/toallas.png' %}" alt="Baño Privado" style="width: 80px;"> </i>
+            </div>
+            <div class="contenido">
+                <h2>Sevicio De Toallas</h2>
+                <p>Disponibilidad de toallas limpias y suaves para tu comodidad durante toda tu estancia.</p>
+            </div>
+        </article>
+    </section>
+
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+{% endblock %}
