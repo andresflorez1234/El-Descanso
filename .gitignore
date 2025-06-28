@@ -1,7 +1,3 @@
-# Archivos de Python
-*.pyc
-__pycache__/
-
 # Base de datos de desarrollo
 db.sqlite3
 
