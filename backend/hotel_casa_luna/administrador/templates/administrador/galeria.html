@@ -1,0 +1,47 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Administrador/css/galeria.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<main> <!-- Contenido principal de la página -->
+    {% include "administrador/carrucel.html" %}
+    <div class="parrafo">
+        <p class="small-text">Explora nuestras instalaciones</p>
+            <h1>Galería de fotos hotel casa luna</h1>
+        <p class="description-text">Explora nuestra galería de imágenes del Hotel Casa Luna y déjate enamorar por la
+        calidez
+        de nuestros espacios.Descubre nuestras cómodas habitaciones, el ambiente familiar y todos los detalles
+        que
+        hacen de tu estadía una
+        experiencia tranquila y acogedora en el encantador pueblo de Jardín.
+        ¡Déjate inspirar y haz tu reserva hoy mismo!
+    </div>
+    <form action="#" class="b-editar">
+        <button type="submit" class="btn btn-danger">Editar</button>
+    </form>
+    <div class="gallery">
+            <img src="{% static 'administrador/img/1.jpg' %}" alt="Habitación 1">
+            <img src="{% static 'administrador/img/2.jpg' %}" alt="Habitación 2">
+            <img src="{% static 'administrador/img/3.jpg' %}" alt="Habitación 3">
+            <img src="{% static 'administrador/img/5.jpg' %}" alt="Habitación 4">
+            <img src="{% static 'administrador/img/6.jpg' %}" alt="Habitación 5">
+            <img src="{% static 'administrador/img/7.jpg' %}" alt="Habitación 6">
+            <img src="{% static 'administrador/img/8.jpg' %}" alt="Habitación 7">
+            <img src="{% static 'administrador/img/9.jpg' %}" alt="Habitación 8">
+            <img src="{% static 'administrador/img/10.jpg' %}" alt="Habitación 9">
+    </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'administrador/js/carrucel.js' %}"></script>
+{% endblock %}

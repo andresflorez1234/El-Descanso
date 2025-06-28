@@ -1,0 +1,78 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Administrador/css/principal.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    {% include "administrador/carrucel.html" %}
+    <br>
+    <br>
+    <br>
+    <br>
+        <div class="Información">
+        <div class="texto">jardín antioquía</div>
+            <h1 class="subtitulo">Hotel casa luna</h1>
+            <p>
+                El Hotel Casa Luna, con su encanto tradicional, se ha consolidado como un <br> referente acogedor en el corazón de Jardín, Antioquia. Su arquitectura típica y su <br> cálido ambiente familiar realzan la belleza del pueblo, ofreciendo a los visitantes <br> una experiencia auténtica y tranquila en uno de los destinos más pintorescos de <br> Colombia.
+            </p>
+            <br>
+            <p>
+                Conocido por su atención personalizada y su ambiente hogareño, el hotel ha <br> recibido a viajeros de todas partes, quienes destacan su ubicación privilegiada — <br> a solo una cuadra del parque principal — y la comodidad de sus instalaciones.
+            </p>
+            <br>
+            <p>
+                Con habitaciones cómodas y bien equipadas, espacios ideales para el descanso y <br> un ambiente rodeado de naturaleza y cultura, el Hotel Casa Luna sigue siendo <br> una opción preferida para quienes desean descubrir el encanto de Jardín con <br> calidez y hospitalidad.
+            </p>
+        </div>
+        <div>
+            <!-- Sección de Habitaciones -->
+    <section class="habitaciones container my-5">
+        <h2 class="text-center mb-4">Habitaciones</h2>
+        <div class="row">
+            <!-- Habitación Individual -->
+            <div class="col-md-4 mb-4">
+                <div class="habitacion-card">
+                    <img src="{% static 'administrador/img/4.jpg' %}" class="habitacion-img">
+                    <h3>Habitación Individual</h3>
+                    <p>
+                        Acogedora habitación con cama individual y baño privado equipado con ducha de agua caliente. Incluye TV de pantalla plana con cable, minibar y elegante suelo de parqué. Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad. Tu espacio personal de descanso y tranquilidad.
+                    </p>
+                </div>
+            </div>
+            <!-- Habitación Doble -->
+            <div class="col-md-4 mb-4">
+                <div class="habitacion-card">
+                    <img src="{% static 'administrador/img/6.jpg' %}" alt="Habitación Doble" class="habitacion-img">
+                    <h3>Habitación Doble</h3>
+                    <p>
+                        Cómoda habitación con dos camas y baño privado equipado con ducha de agua caliente. Incluye TV de pantalla plana con cable, elegante suelo de parqué. Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad. Tu espacio personal de descanso y tranquilidad.
+                    </p>
+                </div>
+            </div>
+            <!-- Habitación Familiar -->
+            <div class="col-md-4 mb-4">
+                <div class="habitacion-card">
+                    <img src="{% static 'administrador/img/7.jpg' %}" alt="Habitación Familiar" class="habitacion-img">
+                    <h3>Habitación Familiar</h3>
+                    <p>
+                        Espacio amplio para toda la familia Baño privado con ducha caliente TV cable y Wi-Fi gratuito de alta velocidad y armario espacioso Tu espacio personal de descanso y tranquilidad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+        </div>
+</main>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'administrador/js/carrucel.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Administrador/css/ver_habitacion.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <main>
+    <div class="vista">
+        <h4 class="titulo-vista">Habitacion 1</h4>
+        <img src="{% static 'administrador/img/2.jpg' %}" class="img">
+        <img src="{% static 'administrador/img/3.jpg' %}" class="img">
+        <img src="{% static 'administrador/img/4.jpg' %}" class="img">
+    </div>
+    <form action="{% url 'modificar' %}">
+        <button type="submit" class="btn btn-danger">Editar habitacion</button>
+    </form>
+    <div class="info-card">
+    <div class="mb-3">
+        <span class="info-label">Número de Habitación:</span>
+        <span class="info-value" id="info-habitacion"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Cantidad de personas:</span>
+        <span class="info-value" id="info-personas"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Descripción:</span>
+        <span class="info-value" id="info-descripcion"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Valor de habitación:</span>
+        <span class="info-value" id="info-valor"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Servicios:</span>
+        <span class="info-value" id="info-servicios"></span>
+    </div>
+    </div>
+</main>
+{% endblock%}
+
