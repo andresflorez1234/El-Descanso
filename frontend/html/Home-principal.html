@@ -218,8 +218,8 @@
                     <ul>
                         <li><a href="#">SOPORTE</a></li>
                         <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
-                        <li><a href="#">POLÍTICA DE PRIVACIDAD</a></li>
-                        <li><a href="#">CONDICIONES DE COMPRA</a></li>
+                        <li><a href="#modal-privacidad" class="modal-trigger">POLÍTICA DE PRIVACIDAD</a></li>
+                        <li><a href="#modal-compra" class="modal-trigger">CONDICIONES DE COMPRA</a></li>
                     </ul>
                 </div>
             </div>
@@ -230,10 +230,39 @@
         </div>
     </footer>
 
+    <div id="modal-privacidad" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Política de Privacidad – Hotel Casa Luna</h2>
+            <p>En Hotel Casa Luna, respetamos tu privacidad. Los datos personales que nos proporcionas para realizar
+                una reserva (como nombre y datos de contacto) se usan únicamente para gestionar tu estadía y cumplir
+                con obligaciones legales. No compartimos tu información con terceros sin tu consentimiento. Puedes
+                solicitar acceso,
+                corrección o eliminación de tus datos en cualquier momento escribiéndonos a [correo@casaluna.com].</p>
+        </div>
+    </div>
+
+    <div id="modal-compra" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Condiciones de Compra – Hotel Casa Luna</h2>
+            <p>Los precios publicados no incluyen impuestos. Se aplicará el IVA del 19%, conforme a la legislación
+                colombiana. <br><br>
+
+                El valor del IVA puede variar dependiendo de la nacionalidad del huésped. Si tienes derecho a una
+                exención, deberás enviar la documentación requerida para su trámite ante las autoridades
+                correspondientes. <br><br>
+
+                Niños menores de 3 años no pagan alojamiento. Solo se cobra el seguro hotelero obligatorio, con un valor
+                de $4.000 COP por noche.</p>
+        </div>
+    </div>
+
     <!-- Bootstrap JS y scripts personalizados -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/scriptcarrusel.js"></script>
     <script src="/js/script.js"></script>
+    <script src="/js/modal.js"></script>
 </body>
 
 </html>
