@@ -1,0 +1,64 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Administrador/css/habitacion.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    {% include "administrador/carrucel.html" %}
+<main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="Información">
+        <h1 class="subtitulo">Habitaciones</h1>
+        <p class="texto-p">
+            Las habitaciones del Hotel Casa Luna combinan calidez y comodidad, <br>
+            ofreciendo un espacio acogedor con detalles que reflejan el encanto tradicional de Jardín.<br>
+            Diseñadas para el descanso, cada habitación cuenta con modernas comodidades en un ambiente tranquilo,<br>
+            muchas con vistas al parque principal o a las montañas,garantizando una experiencia <br>
+            placentera y auténtica para todos sus huéspedes.
+            </p>
+    </div>
+    <!--mastar page de habitaciones-->
+    <div class="habitacion">
+        <h1 class="titulo-h">Habitacion indidual </h1>
+        <img src="{% static 'administrador/img/9.jpg' %}" class="imagen">
+        <h2 class="pesos">COP: 
+            <h2 class="precio">
+            $ 200.000
+        </h2>
+        </h2>
+        <h4 class="descripcion-b">Breve descripción</h4>
+        <p class="descripcion-h">
+            Acogedora habitación con cama individual y baño privado equipado con ducha de agua caliente.  
+            Incluye TV de pantalla plana con cable, minibar y elegante suelo de parqué.
+            Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad.
+        </p>        
+        <div class="iconos">
+            <i class="bi bi-wifi"></i>
+            <i class="bi bi-tv"></i>
+            <i class="bi bi-clock-history"></i>
+            <i class="bi bi-thermometer-half"></i>
+            <i class="bi bi-people-fill"></i>
+            <i class="fas fa-shower"></i>
+        </div>
+        <form action="{% url 'ver_habitacion'%}">
+            <button type="submit" class="btn btn-danger">Ver habitacion</button>
+        </form>
+    </div>
+</main>
+
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+<script src="{% static 'administrador/js/carrucel.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Administrador/css/historial.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<main>
+<div class="container">
+    <h2 class="mt-4">Reservas de Clientes</h2>
+    <table class="table table-bordered table-hover">
+        <thead class="table-dark">
+        <tr>
+            <th>Nombre del Cliente</th>
+            <th>Correo Electrónico</th>
+            <th>Teléfono</th>
+            <th>Fecha de Entrada</th>
+            <th>Fecha de Salida</th>
+            <th>Cantidad de Personas</th>
+            <th>Estado</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in reservas %}
+        <tr>
+            <td>{{ r.nombre_cliente }}</td>
+            <td>{{ r.correo }}</td>
+            <td>{{ r.telefono }}</td>
+            <td>{{ r.fecha_entrada }}</td>
+            <td>{{ r.fecha_salida }}</td>
+            <td>{{ r.cantidad_personas }}</td>
+            <td>{% if r.estado == 'activo' %}✔{% else %}✖{% endif %}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</main>
+{% endblock%}

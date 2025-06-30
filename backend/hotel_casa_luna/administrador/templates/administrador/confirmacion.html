@@ -1,0 +1,76 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'Administrador/css/confirmacion.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <!--mastar page de habitaciones-->
+    <div class="habitacion">
+        <h1 class="titulo-h">Habitacion indidual </h1>
+        <img src="{% static "administrador/img/9.jpg" %}" class="imagen">
+        <h2 class="pesos">COP: 
+            <h2 class="precio">
+            $ 200.000
+        </h2>
+        </h2>
+        <h4 class="descripcion-b">Breve descripción</h4>
+        <p class="descripcion-h">
+            Acogedora habitación con cama individual y baño privado equipado con ducha de agua caliente.  
+            Incluye TV de pantalla plana con cable, minibar y elegante suelo de parqué.
+            Disfruta de una hermosa vista al parque principal desde tu ventana y mantente conectado con Wi-Fi gratuito de alta velocidad.
+        </p>        
+        <div class="iconos">
+            <i class="bi bi-wifi"></i>
+            <i class="bi bi-tv"></i>
+            <i class="bi bi-clock-history"></i>
+            <i class="bi bi-thermometer-half"></i>
+            <i class="bi bi-people-fill"></i>
+            <i class="fas fa-shower"></i>
+        </div>
+    </div>
+    <div class="info-card">
+    <div class="mb-3">
+        <span class="info-label">Nombre del caliente: </span>
+        <span class="info-value" id="info-cliente"> </span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Correo-electronico:</span>
+        <span class="info-value" id="info-correo"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Telefono:</span>
+        <span class="info-value" id="info-telefono"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Fecha de entrada:</span>
+        <span class="info-value" id="info-entrada"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Fecha de salida:</span>
+        <span class="info-value" id="info-salida"></span>
+    </div>
+    <hr>
+    <div class="mb-3">
+        <span class="info-label">Cantidad de personas:</span>
+        <span class="info-value" id="info-personas"></span>
+    </div>
+    </div>
+    <form action="#" class="b-confirmar">
+        <button type="submit" class="btn btn-danger">Confirmar</button>
+    </form>
+    <form action="#" class="b-rechazar">
+    <button type="submit" class="btn btn-danger">Rechazar</button>
+    </form>
+</main>
+{% endblock%}

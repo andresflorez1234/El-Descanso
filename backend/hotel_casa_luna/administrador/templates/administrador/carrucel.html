@@ -1,0 +1,14 @@
+
+{% load static %}
+<section class="destacado" aria-label="Sección de bienvenida">
+    <div id="carrusel-fondo">
+        <img class="imagen-carrusel visible" src="{% static 'administrador/img/home.jpg' %}" alt="Hotel casa luna principal">
+        <img class="imagen-carrusel" src="{% static 'administrador/img/hotel.jpg' %}" alt="Habitacion doble">
+        <img class="imagen-carrusel" src="{% static 'administrador/img/img-2.jpg' %}" alt="Habitacion individual">
+    </div>
+
+    <h1>{{ titulo_destacado|default:"Hotel Casa Luna" }}</h1>
+    <p>{{ subtitulo_destacado|default:"Tu descanso ideal comienza aquí" }}</p>
+
+
+</section>

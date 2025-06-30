@@ -31,12 +31,18 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'habitaciones' %}">Habitaciones</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'servicios' %}">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'galeria' %}">Galería</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home_' %}">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'habitaciones_' %}">Habitaciones</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'servicios_' %}">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'galeria_' %}">Galería</a></li>
                     </ul>
-                    
+                    <div class="user-controls">
+                        <button class="btn btn-link user-icon-btn" id="userProfileTrigger"
+                            aria-label="Perfil de usuario">
+                            <i class="bi bi-person-circle" style="font-size: 2rem; color: white;"></i>
+                        </button>
+                        <button class="btn btn-outline-light ms-2" id="logoutBtn">Cerrar Sesión</button>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -44,6 +50,16 @@
 
     <!-- Contenido principal -->
     <main>
+        <div id="userProfileModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Información del Usuario</h2>
+                <p><strong>Nombre:</strong> [Nombre del Usuario]</p>
+                <p><strong>Email:</strong> [email@example.com]</p>
+                <p><strong>Tipo de Usuario:</strong> [Ej: Cliente / Administrador]</p>
+                <p>¡Bienvenido de nuevo!</p>
+            </div>
+        </div>
         {% block content %}
         {% endblock %}
     </main>
@@ -59,10 +75,10 @@
                 <div class="footer-column-1">
                     <p>MAPA DE SITIO</p>
                     <ul>
-                        <li><a href="{% url 'home' %}">INICIO</a></li>
-                        <li><a href="{% url 'habitaciones' %}">HABITACIONES</a></li>
-                        <li><a href="{% url 'servicios' %}">SERVICIOS</a></li>
-                        <li><a href="{% url 'galeria' %}">GALERÍA</a></li>
+                        <li><a href="{% url 'home_' %}">INICIO</a></li>
+                        <li><a href="{% url 'habitaciones_' %}">HABITACIONES</a></li>
+                        <li><a href="{% url 'servicios_' %}">SERVICIOS</a></li>
+                        <li><a href="{% url 'galeria_' %}">GALERÍA</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -70,8 +86,8 @@
                     <ul>
                         <li><a href="#">SOPORTE</a></li>
                         <li><a href="#">TÉRMINOS Y CONDICIONES</a></li>
-                        <li><a href="#">POLÍTICA DE PRIVACIDAD</a></li>
-                        <li><a href="#">CONDICIONES DE COMPRA</a></li>
+                        <li><a href="#modal-privacidad" class="modal-trigger">POLÍTICA DE PRIVACIDAD</a></li>
+                        <li><a href="#modal-compra" class="modal-trigger">CONDICIONES DE COMPRA</a></li>
                     </ul>
                 </div>
             </div>
@@ -82,12 +98,42 @@
         </div>
     </footer>
 
+    <div id="modal-privacidad" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Política de Privacidad – Hotel Casa Luna</h2>
+            <p>En Hotel Casa Luna, respetamos tu privacidad. Los datos personales que nos proporcionas para realizar
+                una reserva (como nombre y datos de contacto) se usan únicamente para gestionar tu estadía y cumplir
+                con obligaciones legales. No compartimos tu información con terceros sin tu consentimiento. Puedes
+                solicitar acceso,
+                corrección o eliminación de tus datos en cualquier momento escribiéndonos a [correo@casaluna.com].</p>
+        </div>
+    </div>
+
+    <div id="modal-compra" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Condiciones de Compra – Hotel Casa Luna</h2>
+            <p>Los precios publicados no incluyen impuestos. Se aplicará el IVA del 19%, conforme a la legislación
+                colombiana. <br><br>
+
+                El valor del IVA puede variar dependiendo de la nacionalidad del huésped. Si tienes derecho a una
+                exención, deberás enviar la documentación requerida para su trámite ante las autoridades
+                correspondientes. <br><br>
+
+                Niños menores de 3 años no pagan alojamiento. Solo se cobra el seguro hotelero obligatorio, con un valor
+                de $4.000 COP por noche.</p>
+        </div>
+    </div>
+
     <!-- Bootstrap JS y scripts personalizados -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     {% block scripts %}
     {{ block.super}}
     <script src="{% static 'reservas/js/script.js' %}"></script>
     <script src="{% static 'reservas/js/scriptcarrusel.js' %}"></script>
+    <script src="{% static 'reservas/js/modal.js' %}"></script>
+    <script src="{% static 'reservas/js/modal-user.js' %}"></script>
     {% endblock %}
 </body>
 
