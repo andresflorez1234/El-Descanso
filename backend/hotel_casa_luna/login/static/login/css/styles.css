@@ -2,6 +2,36 @@ html {
     font-size: 16px; /* Establece el tamaño de fuente base por defecto en 16 píxeles. */
 }
 
+/* /css/header_user.css */
+
+.custom-navbar .user-controls {
+    display: flex; /* Para alinear el icono y el botón horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    margin-left: auto; /* Empuja los elementos a la derecha, si el mx-auto del nav-bar lo permite */
+    /* Puedes ajustar el margin-left si el mx-auto del navbar-nav no los empuja lo suficiente */
+}
+
+.custom-navbar .user-icon-btn {
+    padding: 0; /* Quita el padding por defecto del botón */
+    border: none; /* Quita el borde */
+    background: none; /* Quita el fondo */
+    line-height: 1; /* Ajusta la altura de línea para el icono */
+    transition: color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.custom-navbar .user-icon-btn:hover {
+    color: #cccccc !important; /* Un color ligeramente diferente al pasar el ratón */
+}
+
+/* Estilos para el modal de perfil, si son diferentes a los modales generales */
+/* Si usas los mismos estilos que en modal.css, no necesitas nada aquí */
+/* Pero si quieres algo específico para este modal, podrías sobreescribir aquí */
+#userProfileModal .modal-content {
+    /* Por ejemplo, un ancho diferente o un fondo distinto */
+    max-width: 500px;
+}
+
+
 /* Ajusta el tamaño de fuente base para pantallas más grandes (por ejemplo, televisores Full HD) */
 @media (min-width: 1920px) {
     html {
@@ -72,9 +102,6 @@ body{
     align-items: center; /* Centra verticalmente. */
 }
 
-.img {
-    height: 90px;
-}
 
 .navbar-brand,
 .nav-link {
@@ -753,7 +780,7 @@ footer {
 }
 
 .footer-logo img {
-    width: 90px; /* Establece el ancho de la imagen del logo. */
+    width: 95px; /* Establece el ancho de la imagen del logo. */
     height: auto; /* Ajusta la altura automáticamente. */
     margin-right: 100px; /* Considerar si este margen es el deseado para móviles/responsive. */
     color: #027332; /* Establece el color. */
@@ -849,4 +876,56 @@ footer {
         text-align: center; /* Centra el texto. */
         gap: 5px; /* Reduce el espacio entre elementos. */
     }
+}
+
+/* Estilos básicos para el modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Permanece en la misma posición incluso si se desplaza la página */
+    z-index: 1000; /* Se superpone a otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilita el scroll si el contenido es demasiado grande */
+    background-color: rgba(0,0,0,0.7); /* Fondo oscuro semitransparente */
+    justify-content: center; /* Centra el contenido horizontalmente (si display flex) */
+    align-items: center; /* Centra el contenido verticalmente (si display flex) */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% desde la parte superior y centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Podrías ajustar esto */
+    max-width: 700px; /* Ancho máximo para mejor legibilidad */
+    border-radius: 8px;
+    position: relative; /* Para posicionar el botón de cerrar */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Animación de entrada (opcional) */
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute; /* Posiciona el botón de cerrar */
+    right: 15px;
+    top: 5px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
