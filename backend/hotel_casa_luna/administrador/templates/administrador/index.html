@@ -19,8 +19,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
     
     <!-- Hoja de estilos personalizada del proyecto -->
-    <link rel="stylesheet" href="{% static 'Administrador/css/principal.css' %}" />
-    {% block extra_css%} {% endblock%}
+    {% block extra_css%}
+    <link rel="stylesheet" href="{% static 'administrador/css/principal.css' %}" />
+    {%endblock%}
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <div class="header px-4 py-3 justify-content-between align-items-center position-relative">
             <!-- Contenedor del logo -->
             <div class="d-flex align-items-center">
-                <img src="{% static 'Administrador/img/logotipo.png' %}" alt="Logo" class="logo me-3" /> <!-- Logo del hotel -->
+                <img href="{% url 'home'%}" src="{% static 'administrador/img/logotipo.png' %}" alt="Logo" class="logo me-3" /> <!-- Logo del hotel -->
             </div>
             <form action="{% url 'inicio' %}">
                 <button type="submit" class="cerrar">Cerrar sesion</button>
@@ -46,7 +47,7 @@
                             <li><a class="dropdown-item" href="{% url 'habitaciones' %}">Ver habitaciones</a></li>
                             <li><a class="dropdown-item" href="{% url 'confirmacion'%}">Ver reservas</a></li>
                         </ul>
-                    </li>0
+                    </li>
                 </li>
                 <li><a class="item" href="{% url 'galeria'%}">Galeria</a></li> <!-- Opción: Galería -->
                 <li><a class="item" href="{% url 'historial' %}">Historial de reserva</a></li> <!-- Opción: Historial de reservas -->
@@ -79,8 +80,8 @@
                 <h5>MAPA DE SITIO</h5>
                 <ul>
                     <li><a href="{% url 'habitaciones' %}">Ver Habitaciones</a></li>
-                    <li><a href="#">Reservas</a></li>
-                    <li><a href="#">Historial de Reserva</a></li>
+                    <li><a href="{% url 'confirmacion' %}">Reservas</a></li>
+                    <li><a href="{% url 'historial' %}">Historial de Reserva</a></li>
                     <li><a href="{% url 'galeria' %}">Galería</a></li>
                 </ul>
             </div>
@@ -88,10 +89,10 @@
             <div class="footer-section">
                 <h5>ENLACES LEGALES</h5>
                 <ul>
-                    <li><a href="#">Soporte</a></li>
-                    <li><a href="#">Términos y Condiciones</a></li>
-                    <li><a href="#">Política de Privacidad</a></li>
-                    <li><a href="#">Política de Cookies</a></li>
+                    <li><a href="{% url 'soporte' %}">Soporte</a></li>
+                    <li><a href="{% url 'terminos'%}">Términos y Condiciones</a></li>
+                    <li><a href="#modal-privacidad" class="modal-trigger">POLÍTICA DE PRIVACIDAD</a></li>
+                    <li><a href="#modal-compra" class="modal-trigger">CONDICIONES DE COMPRA</a></li>
                 </ul>
             </div>
         </div>
@@ -102,5 +103,38 @@
         </div>
     </footer>
 
+    <div id="modal-privacidad" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Política de Privacidad – Hotel Casa Luna</h2>
+            <p>En Hotel Casa Luna, respetamos tu privacidad. Los datos personales que nos proporcionas para realizar
+                una reserva (como nombre y datos de contacto) se usan únicamente para gestionar tu estadía y cumplir
+                con obligaciones legales. No compartimos tu información con terceros sin tu consentimiento. Puedes
+                solicitar acceso,
+                corrección o eliminación de tus datos en cualquier momento escribiéndonos a [correo@casaluna.com].</p>
+        </div>
+    </div>
+
+    <div id="modal-compra" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Condiciones de Compra – Hotel Casa Luna</h2>
+            <p>Los precios publicados no incluyen impuestos. Se aplicará el IVA del 19%, conforme a la legislación
+                colombiana. <br><br>
+
+                El valor del IVA puede variar dependiendo de la nacionalidad del huésped. Si tienes derecho a una
+                exención, deberás enviar la documentación requerida para su trámite ante las autoridades
+                correspondientes. <br><br>
+
+                Niños menores de 3 años no pagan alojamiento. Solo se cobra el seguro hotelero obligatorio, con un valor
+                de $4.000 COP por noche.</p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}
+    {{ block.super}}
+    <script src="{% static 'reservas/js/modal.js' %}"></script>
+    <script src="{% static 'reservas/js/modal-user.js' %}"></script>
+    {% endblock %}
 </body>
 </html> 

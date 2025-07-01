@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'hotel_casa_luna.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hotel',
+        'NAME': 'hotel_casa_luna',
         'USER': 'root',
         'PASSWORD': 'admin',
         'HOST':'localhost',

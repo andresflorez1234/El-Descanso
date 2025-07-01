@@ -21,3 +21,9 @@ def seleccionar_habi(request):
 
 def formulario(request):
     return render(request, 'reservas/formulario.html')
+
+def soporte(request):
+    return render(render, 'reservas/soporte.html')
+
+def terminos(request):
+    return  render(render, 'reservas/terminos.html')

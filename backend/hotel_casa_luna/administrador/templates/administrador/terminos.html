@@ -1,0 +1,66 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'administrador/css/terminos.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <div class="container mt-5 terminos-wrapper">
+        <fieldset>
+            <legend class="mb-4">Término y Condiciones</legend>
+            <h4>1. Aceptación de los Términos</h4>
+            <p>
+                Al acceder y utilizar este sitio web, usted acepta cumplir con estos Términos y Condiciones. Si no está de acuerdo con alguna parte de ellos, por favor no utilice este sitio.
+                Este sitio web pertenece y es operado por Hotel Casa Luna. Su uso está sujeto a los siguientes términos, que se aplican a todos los visitantes, usuarios y otras personas que accedan al sitio.
+            </p>
+            <h4>2. Reservas</h4>
+            <p class="p-1"> Todas las reservas están sujetas a disponibilidad y confirmación por parte del hotel. </p>
+            <br>
+            <p class="p-1">  Al realizar una reserva, usted se compromete a proporcionar información veraz, completa y actualizada.</p>
+            <br>
+            <p class="p-1"> Algunas tarifas pueden requerir pago anticipado, depósito o tarjeta de crédito como garantía.</p>
+            
+            <h4>3. Cancelaciones</h4>
+            <p>
+                Las políticas de cancelación varían según la tarifa seleccionada.<br>
+                Las cancelaciones realizadas fuera del plazo permitido o la no presentación no recibirán reembolso.<br>
+                Las tarifas no reembolsables no permiten cancelación ni modificación.
+            </p>
+            <h4>4. Precios</h4>
+            <p>
+                Los precios pueden variar sin previo aviso. El precio confirmado en la reserva será el precio final, a menos que haya errores evidentes.
+            </p>
+            <h4>5. Uso del sitio</h4>
+            <p>
+                El contenido de este sitio es solo para su información general y uso personal.
+                Está sujeto a cambios sin previo aviso. Nos reservamos el derecho de modificar o descontinuar cualquier parte del sitio sin previo aviso.
+            </p>
+            <h4>6. Privacidad y Protección de Datos</h4>
+            <p>
+                Nos comprometemos a proteger su privacidad. Toda la información proporcionada será tratada de acuerdo con nuestra Política de Privacidad.<br>
+                Al utilizar este sitio, usted acepta que sus datos sean almacenados y utilizados para fines administrativos y comerciales legítimos.
+            </p>
+            <h4>7. Propiedad Intelectual</h4>
+            <p>
+                Todo el contenido del sitio, incluidos textos, imágenes, logotipos y diseños, está protegido por derechos de autor. No se permite su uso sin autorización previa por escrito.
+            </p>
+            <h4>8. Enlaces a Terceros</h4>
+            <p>
+                Este sitio puede contener enlaces a otros sitios web que no están bajo nuestro control. No somos responsables del contenido ni de las políticas de esos sitios.
+            </p>
+            <h4>9. Modificaciones</h4>
+            <p>
+                Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios entrarán en vigencia una vez publicados en el sitio.
+            </p>
+        </fieldset>
+        <a href="{% url 'home'%}" class="btn btn-primary">Volver</a>
+        <br>
+    </div>
+</main>
+{%endblock%}

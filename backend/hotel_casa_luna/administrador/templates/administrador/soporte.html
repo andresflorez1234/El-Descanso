@@ -1,0 +1,74 @@
+{% extends 'administrador/index.html' %}
+
+{% load static %}
+
+{% block title %}Home | Hotel Casa Luna{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'administrador/css/soporte.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<main>
+    <h1>Centro de Soporte</h1>
+        <p><strong>¿Qué es el soporte?</strong></p><br>
+        <p class="texto">El soporte es una sección de ayuda donde los usuarios pueden resolver dudas, reportar problemas y contactar al equipo del hotel para recibir asistencia personalizada.</p>
+    <hr>
+    <section>
+    <h2>Preguntas Frecuentes (FAQ)</h2>
+    <ul class="faq">
+        <li><strong>No puedo iniciar sesión.</strong></li><br>
+        <p class="texto-2">Asegúrate de ingresar el correo y contraseña correctos. Si olvidaste tu contraseña, haz clic en “¿Olvidaste tu contraseña?” en la página de inicio de sesión.</p>
+
+        <li><strong>Chat con un agente del hotel.</strong></li><br>
+        <a class="links" href="https://wa.me/573001112233" target="_blank">Haz clic aquí para chatear con nosotros por WhatsApp.</a>
+    </ul>
+    </section>
+
+    <hr>
+
+    <section>
+        <h2>Formulario de contacto</h2>
+        <form class="formulario" action="/enviar_soporte" method="post">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" class="form-control" required>
+                </div>
+            <br>
+            <br>
+            <br>
+            <div class="mb-3">
+                <label for="correo" class="form-label">Correo electrónico:</label>
+                <input type="email" id="correo" name="correo" class="form-control" required>
+            </div>
+            <br>
+            <br>
+            <br>
+        
+            <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" class="form-control" rows="4" required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+        </form>
+    </section>
+</main>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{%endblock%}

@@ -28,3 +28,9 @@ def confirmacion(request):
 
 def historial(request):
     return render(render, 'administrador/historial.html')
+
+def soporte(request):
+    return render(render, 'administrador/soporte.html')
+
+def terminos(request):
+    return  render(render, 'administrador/terminos.html')
